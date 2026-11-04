@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgCar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E1A" />
+      <stop offset="50%" stop-color="#121829" />
+      <stop offset="100%" stop-color="#090C16" />
+    </linearGradient>
+
+    <linearGradient id="primaryCardCar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#192238" />
+      <stop offset="100%" stop-color="#101726" />
+    </linearGradient>
+
+    <linearGradient id="boxGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7171" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FF7171" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="boxGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9FA0FF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#9FA0FF" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="boxGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#5EEAD4" stop-opacity="0.05" />
+    </linearGradient>
+
+    <filter id="carGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgCar)" />
+  <rect x="1" y="1" width="798" height="498" rx="15" fill="none" stroke="#7BE0D0" stroke-width="1.5" stroke-opacity="0.25" />
+
+  <!-- Window Header -->
+  <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 784 0 C 792.84 0 800 7.16 800 16 L 800 48 L 0 48 Z" fill="#141C30" />
+  <circle cx="28" cy="24" r="6" fill="#FF7171" />
+  <circle cx="48" cy="24" r="6" fill="#FBBF24" />
+  <circle cx="68" cy="24" r="6" fill="#34D399" />
+  <text x="100" y="29" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">car_damage_cnn_inference.py — Computer Vision Multi-Class Detector</text>
+  <rect x="650" y="14" width="125" height="22" rx="11" fill="#1A2D3C" />
+  <circle cx="662" cy="25" r="4" fill="#5EEAD4" />
+  <text x="674" y="29" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#D5E8E6">STREAMLIT APP</text>
+
+  <!-- Left Side: Vehicle Vision Viewport with Bounding Boxes -->
+  <g transform="translate(30, 70)">
+    <!-- Viewport Panel -->
+    <rect width="470" height="395" rx="12" fill="#0C1220" stroke="#9FA0FF" stroke-width="1" stroke-opacity="0.25" />
+    
+    <!-- Camera Viewfinder Grid Overlay -->
+    <line x1="20" y1="20" x2="50" y2="20" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="20" y1="20" x2="20" y2="50" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="450" y1="20" x2="420" y2="20" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="450" y1="20" x2="450" y2="50" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="20" y1="375" x2="50" y2="375" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="20" y1="375" x2="20" y2="345" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="450" y1="375" x2="420" y2="375" stroke="#9FA0FF" stroke-width="2" />
+    <line x1="450" y1="375" x2="450" y2="345" stroke="#9FA0FF" stroke-width="2" />
+
+    <!-- Center Reticle -->
+    <circle cx="235" cy="205" r="28" fill="none" stroke="#9FA0FF" stroke-width="1" stroke-dasharray="4 4" opacity="0.4" />
+    <circle cx="235" cy="205" r="3" fill="#5EEAD4" />
+
+    <!-- Sleek Futuristic Sedan Silhouette / Wireframe -->
+    <g transform="translate(45, 95)">
+      <!-- Ground Shadow -->
+      <ellipse cx="190" cy="180" rx="160" ry="12" fill="#000000" opacity="0.5" />
+
+      <!-- Car Body Blueprint -->
+      <path d="M 35 155 
+               C 45 155, 60 148, 80 142 
+               L 115 105 
+               C 135 78, 175 70, 230 70 
+               L 275 72 
+               C 310 75, 330 105, 345 125 
+               L 370 140 
+               C 385 142, 395 150, 395 158 
+               L 385 168 
+               L 340 168 
+               C 335 150, 315 138, 295 140 
+               C 275 142, 260 155, 260 168 
+               L 150 168 
+               C 145 150, 125 138, 105 140 
+               C 85 142, 70 155, 70 168 
+               L 25 168 Z" 
+            fill="#141E34" stroke="#9FA0FF" stroke-width="2.5" />
+
+      <!-- Roof & Windows -->
+      <path d="M 125 102 L 155 78 C 175 74, 220 74, 235 74 L 270 76 L 315 105 L 235 105 Z" fill="#1F2C4A" stroke="#7BE0D0" stroke-width="1.2" opacity="0.8" />
+      <path d="M 235 105 L 270 76 C 290 85, 310 95, 325 110 L 235 110 Z" fill="#1F2C4A" stroke="#7BE0D0" stroke-width="1.2" opacity="0.8" />
+
+      <!-- Wheels -->
+      <circle cx="87" cy="168" r="22" fill="#0E1628" stroke="#D5E8E6" stroke-width="2" />
+      <circle cx="87" cy="168" r="12" fill="#1E2A44" stroke="#9FA0FF" stroke-width="1" />
+      <circle cx="317" cy="168" r="22" fill="#0E1628" stroke="#D5E8E6" stroke-width="2" />
+      <circle cx="317" cy="168" r="12" fill="#1E2A44" stroke="#9FA0FF" stroke-width="1" />
+
+      <!-- Headlight / Taillight -->
+      <polygon points="365,142 385,148 375,158 360,150" fill="#FFD166" opacity="0.8" />
+      <polygon points="35,152 48,150 48,162 33,162" fill="#FF7171" opacity="0.8" />
+    </g>
+
+    <!-- CNN Bounding Box 1: Bumper Dent -->
+    <g transform="translate(380, 215)">
+      <rect width="70" height="48" fill="url(#boxGrad1)" stroke="#FF7171" stroke-width="2" stroke-dasharray="4 2" />
+      <rect x="0" y="-20" width="80" height="18" rx="4" fill="#FF7171" />
+      <text x="40" y="-7" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">Bumper Dent 96.4%</text>
+    </g>
+
+    <!-- CNN Bounding Box 2: Door Scratch -->
+    <g transform="translate(190, 185)">
+      <rect width="85" height="42" fill="url(#boxGrad2)" stroke="#9FA0FF" stroke-width="2" />
+      <rect x="0" y="-20" width="85" height="18" rx="4" fill="#9FA0FF" />
+      <text x="42.5" y="-7" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#0B0F19">Door Scratch 91.8%</text>
+    </g>
+
+    <!-- CNN Bounding Box 3: Head Lamp / Glass -->
+    <g transform="translate(60, 220)">
+      <rect width="60" height="40" fill="url(#boxGrad3)" stroke="#5EEAD4" stroke-width="2" stroke-dasharray="3 2" />
+      <rect x="0" y="-20" width="70" height="18" rx="4" fill="#0D9488" />
+      <text x="35" y="-7" text-anchor="middle" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">Head Lamp 88.2%</text>
+    </g>
+
+    <!-- Bottom Status Strip -->
+    <g transform="translate(20, 345)">
+      <rect width="430" height="34" rx="6" fill="#131B2E" />
+      <text x="14" y="21" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#5EEAD4">● CNN Inference: 24ms</text>
+      <text x="210" y="21" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#94A3B8">Input: 224x224x3 RGB</text>
+      <text x="360" y="21" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#FF7171">Damage Found: 3</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Classification Probabilities & Class List -->
+  <g transform="translate(520, 70)">
+    <rect width="250" height="395" rx="12" fill="url(#primaryCardCar)" stroke="#9FA0FF" stroke-width="1" stroke-opacity="0.2" />
+    
+    <text x="20" y="32" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#F1F5F9">Detected Classes (7)</text>
+    <text x="20" y="48" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">Softmax Probability Distribution</text>
+
+    <!-- Class Items -->
+    <g transform="translate(20, 68)">
+      <!-- Item 1 -->
+      <text x="0" y="11" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#FF7171">1. Bumper Dent</text>
+      <text x="210" y="11" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#FF7171">96.4%</text>
+      <rect x="0" y="16" width="210" height="6" rx="3" fill="#1E293B" />
+      <rect x="0" y="16" width="202" height="6" rx="3" fill="#FF7171" />
+
+      <!-- Item 2 -->
+      <text x="0" y="45" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#9FA0FF">2. Door Scratch</text>
+      <text x="210" y="45" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#9FA0FF">91.8%</text>
+      <rect x="0" y="50" width="210" height="6" rx="3" fill="#1E293B" />
+      <rect x="0" y="50" width="192" height="6" rx="3" fill="#9FA0FF" />
+
+      <!-- Item 3 -->
+      <text x="0" y="79" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#5EEAD4">3. Head Lamp</text>
+      <text x="210" y="79" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#5EEAD4">88.2%</text>
+      <rect x="0" y="84" width="210" height="6" rx="3" fill="#1E293B" />
+      <rect x="0" y="84" width="185" height="6" rx="3" fill="#5EEAD4" />
+
+      <!-- Item 4 -->
+      <text x="0" y="113" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">4. Bumper Scratch</text>
+      <text x="210" y="113" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">14.1%</text>
+      <rect x="0" y="118" width="210" height="5" rx="2.5" fill="#1E293B" />
+      <rect x="0" y="118" width="30" height="5" rx="2.5" fill="#475569" />
+
+      <!-- Item 5 -->
+      <text x="0" y="147" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">5. Door Dent</text>
+      <text x="210" y="147" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">11.3%</text>
+      <rect x="0" y="152" width="210" height="5" rx="2.5" fill="#1E293B" />
+      <rect x="0" y="152" width="24" height="5" rx="2.5" fill="#475569" />
+
+      <!-- Item 6 -->
+      <text x="0" y="181" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">6. Glass Shatter</text>
+      <text x="210" y="181" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">4.5%</text>
+      <rect x="0" y="186" width="210" height="5" rx="2.5" fill="#1E293B" />
+      <rect x="0" y="186" width="10" height="5" rx="2.5" fill="#475569" />
+
+      <!-- Item 7 -->
+      <text x="0" y="215" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">7. Tail Lamp</text>
+      <text x="210" y="215" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748B">2.8%</text>
+      <rect x="0" y="220" width="210" height="5" rx="2.5" fill="#1E293B" />
+      <rect x="0" y="220" width="6" height="5" rx="2.5" fill="#475569" />
+    </g>
+
+    <!-- CNN Architecture Chip -->
+    <g transform="translate(18, 320)">
+      <rect width="214" height="50" rx="8" fill="#131B2E" stroke="#9FA0FF" stroke-width="1" stroke-opacity="0.3" />
+      <text x="12" y="20" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#D5E8E6">Backbone: Custom CNN</text>
+      <text x="12" y="36" font-family="'Inter', sans-serif" font-size="9.5" fill="#94A3B8">Conv2D + MaxPool + Dropout + Dense</text>
+    </g>
+  </g>
+</svg>
+

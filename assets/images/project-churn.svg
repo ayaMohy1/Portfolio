@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgCh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F1D" />
+      <stop offset="50%" stop-color="#11182B" />
+      <stop offset="100%" stop-color="#0A0D17" />
+    </linearGradient>
+
+    <linearGradient id="primaryCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A2238" />
+      <stop offset="100%" stop-color="#121828" />
+    </linearGradient>
+
+    <linearGradient id="gradPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9FA0FF" />
+      <stop offset="100%" stop-color="#7B61FF" />
+    </linearGradient>
+
+    <linearGradient id="gradTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D5E8E6" />
+      <stop offset="100%" stop-color="#5EEAD4" />
+    </linearGradient>
+
+    <linearGradient id="gradCoral" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF7171" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+
+    <linearGradient id="curveFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9FA0FF" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#9FA0FF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <filter id="glowDash" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dashboard Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgCh)" />
+  <rect x="1" y="1" width="798" height="498" rx="15" fill="none" stroke="#9FA0FF" stroke-width="1.5" stroke-opacity="0.25" />
+
+  <!-- Window Header / Titlebar -->
+  <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 784 0 C 792.84 0 800 7.16 800 16 L 800 48 L 0 48 Z" fill="#141C30" />
+  <circle cx="28" cy="24" r="6" fill="#FF7171" />
+  <circle cx="48" cy="24" r="6" fill="#FBBF24" />
+  <circle cx="68" cy="24" r="6" fill="#34D399" />
+  <text x="100" y="29" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94A3B8">analytics_churn_model_pipeline.py — ROC-AUC Analysis</text>
+  <rect x="670" y="14" width="105" height="22" rx="11" fill="#1E2A47" />
+  <circle cx="682" cy="25" r="4" fill="#34D399" />
+  <text x="694" y="29" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#E2E8F0">PRODUCTION</text>
+
+  <!-- Left Column: ROC-AUC Curve & Model Metrics -->
+  <g transform="translate(30, 70)">
+    <!-- Card Surface -->
+    <rect width="440" height="395" rx="12" fill="url(#primaryCard)" stroke="#9FA0FF" stroke-width="1" stroke-opacity="0.2" />
+    
+    <!-- Header -->
+    <text x="24" y="34" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="700" fill="#F1F5F9">Receiver Operating Characteristic (ROC)</text>
+    <text x="24" y="52" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">True Positive Rate vs. False Positive Rate Curve</text>
+    
+    <!-- ROC Chart Area -->
+    <g transform="translate(35, 75)">
+      <!-- Chart Grid -->
+      <line x1="0" y1="0" x2="360" y2="0" stroke="#334155" stroke-dasharray="3 4" stroke-width="0.8" />
+      <line x1="0" y1="50" x2="360" y2="50" stroke="#334155" stroke-dasharray="3 4" stroke-width="0.8" />
+      <line x1="0" y1="100" x2="360" y2="100" stroke="#334155" stroke-dasharray="3 4" stroke-width="0.8" />
+      <line x1="0" y1="150" x2="360" y2="150" stroke="#334155" stroke-dasharray="3 4" stroke-width="0.8" />
+      <line x1="0" y1="200" x2="360" y2="200" stroke="#475569" stroke-width="1.2" />
+      <line x1="0" y1="0" x2="0" y2="200" stroke="#475569" stroke-width="1.2" />
+
+      <!-- Baseline Diagonal -->
+      <line x1="0" y1="200" x2="360" y2="0" stroke="#64748B" stroke-dasharray="4 4" stroke-width="1" opacity="0.6" />
+
+      <!-- ROC Filled Area -->
+      <path d="M 0 200 
+               C 10 100, 25 35, 60 22 
+               C 110 8, 200 6, 280 4 
+               C 320 2, 350 1, 360 0 
+               L 360 200 Z" fill="url(#curveFill)" />
+
+      <!-- ROC Line Curve -->
+      <path d="M 0 200 
+               C 10 100, 25 35, 60 22 
+               C 110 8, 200 6, 280 4 
+               C 320 2, 350 1, 360 0" 
+            fill="none" stroke="url(#gradPurple)" stroke-width="3.5" filter="url(#glowDash)" />
+
+      <!-- Marker Dot -->
+      <circle cx="60" cy="22" r="5" fill="#FF7171" stroke="#FFFFFF" stroke-width="2" />
+      
+      <!-- Axis Labels -->
+      <text x="180" y="222" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">False Positive Rate (1 - Specificity)</text>
+      <text x="-100" y="-18" transform="rotate(-90)" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">True Positive Rate (Recall)</text>
+    </g>
+
+    <!-- Metrics Badge Bar -->
+    <g transform="translate(25, 318)">
+      <rect width="120" height="55" rx="8" fill="#101726" stroke="#9FA0FF" stroke-width="1" stroke-opacity="0.3" />
+      <text x="14" y="22" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">ROC-AUC SCORE</text>
+      <text x="14" y="44" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" fill="#9FA0FF">0.9111</text>
+    </g>
+
+    <g transform="translate(160, 318)">
+      <rect width="120" height="55" rx="8" fill="#101726" stroke="#D5E8E6" stroke-width="1" stroke-opacity="0.3" />
+      <text x="14" y="22" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">PRECISION</text>
+      <text x="14" y="44" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" fill="#5EEAD4">88.4%</text>
+    </g>
+
+    <g transform="translate(295, 318)">
+      <rect width="120" height="55" rx="8" fill="#101726" stroke="#FF7171" stroke-width="1" stroke-opacity="0.3" />
+      <text x="14" y="22" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">F1-SCORE</text>
+      <text x="14" y="44" font-family="'JetBrains Mono', monospace" font-size="17" font-weight="700" fill="#FF7171">87.9%</text>
+    </g>
+  </g>
+
+  <!-- Right Column: Churn Gauge & Feature Importance -->
+  <g transform="translate(490, 70)">
+    <!-- Feature Importance Card -->
+    <rect width="280" height="230" rx="12" fill="url(#primaryCard)" stroke="#9FA0FF" stroke-width="1" stroke-opacity="0.2" />
+    <text x="20" y="32" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" fill="#F1F5F9">Key Churn Predictors</text>
+    <text x="20" y="48" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">Feature Importance (Random Forest / GBDT)</text>
+
+    <!-- Bars -->
+    <g transform="translate(20, 68)">
+      <text x="0" y="12" font-family="'Inter', sans-serif" font-size="11" fill="#E2E8F0">Contract (Month-to-Month)</text>
+      <text x="240" y="12" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#9FA0FF">0.34</text>
+      <rect x="0" y="18" width="240" height="7" rx="3.5" fill="#1E293B" />
+      <rect x="0" y="18" width="205" height="7" rx="3.5" fill="url(#gradPurple)" />
+
+      <text x="0" y="48" font-family="'Inter', sans-serif" font-size="11" fill="#E2E8F0">Total Charges / Pricing</text>
+      <text x="240" y="48" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#5EEAD4">0.26</text>
+      <rect x="0" y="54" width="240" height="7" rx="3.5" fill="#1E293B" />
+      <rect x="0" y="54" width="165" height="7" rx="3.5" fill="url(#gradTeal)" />
+
+      <text x="0" y="84" font-family="'Inter', sans-serif" font-size="11" fill="#E2E8F0">Customer Tenure (Months)</text>
+      <text x="240" y="84" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FF7171">0.21</text>
+      <rect x="0" y="90" width="240" height="7" rx="3.5" fill="#1E293B" />
+      <rect x="0" y="90" width="130" height="7" rx="3.5" fill="url(#gradCoral)" />
+
+      <text x="0" y="120" font-family="'Inter', sans-serif" font-size="11" fill="#E2E8F0">Online Tech Support</text>
+      <text x="240" y="120" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="11" fill="#9FA0FF">0.12</text>
+      <rect x="0" y="126" width="240" height="7" rx="3.5" fill="#1E293B" />
+      <rect x="0" y="126" width="80" height="7" rx="3.5" fill="url(#gradPurple)" />
+    </g>
+  </g>
+
+  <!-- Bottom Right: Live Prediction Insight Card -->
+  <g transform="translate(490, 315)">
+    <rect width="280" height="150" rx="12" fill="url(#primaryCard)" stroke="#7BE0D0" stroke-width="1" stroke-opacity="0.25" />
+    
+    <g transform="translate(20, 24)">
+      <circle cx="16" cy="16" r="16" fill="#1E2A47" />
+      <text x="16" y="21" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14">⚡</text>
+      <text x="42" y="14" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#F1F5F9">Predictive Retention Alert</text>
+      <text x="42" y="28" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">High Churn Probability Flagged</text>
+    </g>
+
+    <g transform="translate(20, 72)">
+      <rect width="240" height="52" rx="8" fill="#111828" stroke="#FF7171" stroke-width="1" stroke-opacity="0.4" />
+      <circle cx="26" cy="26" r="14" fill="#FF7171" fill-opacity="0.2" />
+      <text x="26" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-size="12" fill="#FF7171">!</text>
+      <text x="50" y="23" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Churn Probability: 84.7%</text>
+      <text x="50" y="38" font-family="'Inter', sans-serif" font-size="9.5" fill="#94A3B8">Action: Offer 1-Yr Discount Plan</text>
+    </g>
+  </g>
+</svg>
+

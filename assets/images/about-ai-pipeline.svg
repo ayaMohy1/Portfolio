@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="abBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101728" />
+      <stop offset="100%" stop-color="#090E1A" />
+    </linearGradient>
+
+    <linearGradient id="pipeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9FA0FF" />
+      <stop offset="100%" stop-color="#6E70FF" />
+    </linearGradient>
+
+    <linearGradient id="pipeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+
+    <linearGradient id="pipeGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7171" />
+      <stop offset="100%" stop-color="#F43F5E" />
+    </linearGradient>
+
+    <filter id="pGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="450" rx="16" fill="url(#abBg)" stroke="#9FA0FF" stroke-width="1.2" stroke-opacity="0.2" />
+
+  <!-- Subtle Blueprint Grid -->
+  <pattern id="gridPattern" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1E2A44" stroke-width="0.8" opacity="0.4" />
+  </pattern>
+  <rect width="600" height="450" rx="16" fill="url(#gridPattern)" />
+
+  <!-- Flow Title -->
+  <text x="40" y="45" font-family="'Space Grotesk', sans-serif" font-size="16" font-weight="700" fill="#F1F5F9">End-to-End AI Engineering Workflow</text>
+  <text x="40" y="65" font-family="'Inter', sans-serif" font-size="11" fill="#94A3B8">From raw data exploration to neural architecture deployment</text>
+
+  <!-- Step 1: Data Preprocessing & EDA -->
+  <g transform="translate(40, 100)">
+    <rect width="240" height="85" rx="10" fill="#131C32" stroke="#9FA0FF" stroke-width="1.2" stroke-opacity="0.4" />
+    <circle cx="36" cy="42" r="20" fill="#1E2945" />
+    <text x="36" y="47" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18">📊</text>
+    <text x="70" y="34" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#F1F5F9">1. Data Ingestion & EDA</text>
+    <text x="70" y="52" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">Pandas • NumPy • Cleaning</text>
+    <text x="70" y="68" font-family="'Inter', sans-serif" font-size="10" fill="#7BE0D0">Feature engineering & outlier detection</text>
+  </g>
+
+  <!-- Connector Line 1 to 2 -->
+  <path d="M 280 142 L 320 142" stroke="#9FA0FF" stroke-width="2" stroke-dasharray="4 3" filter="url(#pGlow)" />
+  <polygon points="320,138 328,142 320,146" fill="#9FA0FF" />
+
+  <!-- Step 2: Machine Learning Models -->
+  <g transform="translate(325, 100)">
+    <rect width="235" height="85" rx="10" fill="#131C32" stroke="#7BE0D0" stroke-width="1.2" stroke-opacity="0.4" />
+    <circle cx="36" cy="42" r="20" fill="#15363B" />
+    <text x="36" y="47" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18">⚙️</text>
+    <text x="70" y="34" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#F1F5F9">2. Machine Learning</text>
+    <text x="70" y="52" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">Scikit-learn • Supervised ML</text>
+    <text x="70" y="68" font-family="'Inter', sans-serif" font-size="10" fill="#9FA0FF">Classification, Regression, SVM</text>
+  </g>
+
+  <!-- Flow Connector Down -->
+  <path d="M 442 185 L 442 225 L 442 235" stroke="#7BE0D0" stroke-width="2" stroke-dasharray="4 3" />
+  <polygon points="438,235 442,243 446,235" fill="#7BE0D0" />
+
+  <!-- Step 3: Deep Learning & CNNs -->
+  <g transform="translate(325, 245)">
+    <rect width="235" height="85" rx="10" fill="#131C32" stroke="#FF7171" stroke-width="1.2" stroke-opacity="0.4" />
+    <circle cx="36" cy="42" r="20" fill="#3B1E28" />
+    <text x="36" y="47" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18">🧠</text>
+    <text x="70" y="34" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#F1F5F9">3. Deep Learning & CNN</text>
+    <text x="70" y="52" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">TensorFlow • Keras • Vision</text>
+    <text x="70" y="68" font-family="'Inter', sans-serif" font-size="10" fill="#FF7171">Image classification & feature maps</text>
+  </g>
+
+  <!-- Connector Line 3 to 4 -->
+  <path d="M 325 287 L 285 287" stroke="#FF7171" stroke-width="2" stroke-dasharray="4 3" />
+  <polygon points="285,283 277,287 285,291" fill="#FF7171" />
+
+  <!-- Step 4: Model Evaluation & Optimization -->
+  <g transform="translate(40, 245)">
+    <rect width="240" height="85" rx="10" fill="#131C32" stroke="#9FA0FF" stroke-width="1.2" stroke-opacity="0.4" />
+    <circle cx="36" cy="42" r="20" fill="#1E2945" />
+    <text x="36" y="47" text-anchor="middle" font-family="'Inter', sans-serif" font-size="18">🎯</text>
+    <text x="70" y="34" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="700" fill="#F1F5F9">4. Evaluation & Tuning</text>
+    <text x="70" y="52" font-family="'Inter', sans-serif" font-size="10.5" fill="#94A3B8">ROC-AUC • Confusion Matrix</text>
+    <text x="70" y="68" font-family="'Inter', sans-serif" font-size="10" fill="#7BE0D0">Cross-validation & hyperparameter tuning</text>
+  </g>
+
+  <!-- Flow Connector Down to 5 -->
+  <path d="M 160 330 L 160 365" stroke="#9FA0FF" stroke-width="2" stroke-dasharray="4 3" />
+  <polygon points="156,365 160,373 164,365" fill="#9FA0FF" />
+
+  <!-- Step 5: Application Deployment & Streamlit -->
+  <g transform="translate(40, 375)">
+    <rect width="520" height="50" rx="10" fill="#18233C" stroke="#7BE0D0" stroke-width="1.2" stroke-opacity="0.5" />
+    <circle cx="32" cy="25" r="14" fill="#0EA5E9" fill-opacity="0.2" />
+    <text x="32" y="30" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14">🚀</text>
+    <text x="60" y="24" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#F1F5F9">5. Real-World AI Application & Interface</text>
+    <text x="60" y="38" font-family="'Inter', sans-serif" font-size="10" fill="#94A3B8">Streamlit Web Apps • Frontend Integration (HTML/CSS/JS) • Usable AI Interfaces</text>
+    <rect x="420" y="14" width="85" height="22" rx="11" fill="#7BE0D0" fill-opacity="0.15" />
+    <text x="462.5" y="29" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#5EEAD4">DEPLOYED</text>
+  </g>
+</svg>
+
