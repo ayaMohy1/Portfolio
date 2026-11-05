@@ -122,3 +122,5 @@ Because the website is built with pure static files (HTML, CSS, JS):
 - **GitHub Pages**: Push this repository to GitHub and enable GitHub Pages in Settings → Pages.
 - **Vercel / Netlify**: Simply drag and drop the folder or connect your Git repository.
 
+<!-- website link -->
+https://ayamohy1.github.io/Portfolio/

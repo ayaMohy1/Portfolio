@@ -1,1247 +1,1811 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <!-- Primary Meta Tags -->
-  <title>Aya Mohy — AI Engineer | Data Scientist | Machine Learning</title>
-  <meta name="title" content="Aya Mohy — AI Engineer | Data Scientist | Machine Learning" />
-  <meta name="description" content="Personal portfolio of Aya Mohy — AI Engineer & Data Scientist specializing in Machine Learning, Deep Learning, Computer Vision, and Predictive Analytics." />
-  <meta name="keywords" content="Aya Mohy, AI Engineer, Data Scientist, Machine Learning, Deep Learning, Computer Vision, Python, TensorFlow, Scikit-learn, CNN, Car Damage Detection, Customer Churn Prediction" />
-  <meta name="author" content="Aya Mohy" />
+    <!-- Primary Meta Tags -->
+    <title>Aya Mohy — AI Engineer | Data Scientist | Machine Learning</title>
+    <meta
+      name="title"
+      content="Aya Mohy — AI Engineer | Data Scientist | Machine Learning"
+    />
+    <meta
+      name="description"
+      content="Personal portfolio of Aya Mohy — AI Engineer & Data Scientist specializing in Machine Learning, Deep Learning, Computer Vision, and Predictive Analytics."
+    />
+    <meta
+      name="keywords"
+      content="Aya Mohy, AI Engineer, Data Scientist, Machine Learning, Deep Learning, Computer Vision, Python, TensorFlow, Scikit-learn, CNN, Car Damage Detection, Customer Churn Prediction"
+    />
+    <meta name="author" content="Aya Mohy" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/animations.css" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Accessible Skip Link -->
+    <a href="#home" class="skip-link">Skip to main content</a>
 
-  <!-- Accessible Skip Link -->
-  <a href="#home" class="skip-link">Skip to main content</a>
+    <!-- Interactive Neural Constellation Canvas Background -->
+    <canvas id="particlesCanvas" aria-hidden="true"></canvas>
 
-  <!-- Interactive Neural Constellation Canvas Background -->
-  <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+    <!-- Custom Ambient Cursor Glow (Desktop Only) -->
+    <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
 
-  <!-- Custom Ambient Cursor Glow (Desktop Only) -->
-  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
-
-  <!-- ========================================================================
+    <!-- ========================================================================
        Navigation Bar
        ======================================================================== -->
-  <header id="navbar" class="navbar" role="banner">
-    <div class="container navbar-container">
-      <!-- Logo -->
-      <a href="#home" class="logo" aria-label="Aya Mohy Portfolio Home">
-        <span class="logo-badge" aria-hidden="true">AM</span>
-        <span>Aya<span class="logo-accent">.ai</span></span>
-      </a>
-
-      <!-- Desktop Nav Menu (All 10 Sections) -->
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-menu">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#feedback" class="nav-link">Feedback</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#achievements" class="nav-link">Achievements</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Nav Actions (Theme Toggle & Mobile Hamburger) -->
-      <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark / Light Mode" title="Toggle theme">
-          <span id="themeIcon" aria-hidden="true">☀️</span>
-        </button>
-
-        <!-- Mobile Hamburger Toggle -->
-        <button id="hamburgerBtn" class="hamburger" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobileNav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Navigation Drawer -->
-  <div id="mobileBackdrop" class="mobile-backdrop" aria-hidden="true"></div>
-  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation Drawer">
-    <div>
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
-        <span class="logo">
-          <span class="logo-badge">AM</span>
+    <header id="navbar" class="navbar" role="banner">
+      <div class="container navbar-container">
+        <!-- Logo -->
+        <a href="#home" class="logo" aria-label="Aya Mohy Portfolio Home">
+          <span class="logo-badge" aria-hidden="true">AM</span>
           <span>Aya<span class="logo-accent">.ai</span></span>
-        </span>
-      </div>
-      <ul class="mobile-nav-links">
-        <li><a href="#home" class="mobile-nav-link active"><span>01.</span> Home</a></li>
-        <li><a href="#about" class="mobile-nav-link"><span>02.</span> About Me</a></li>
-        <li><a href="#education" class="mobile-nav-link"><span>03.</span> Education</a></li>
-        <li><a href="#experience" class="mobile-nav-link"><span>04.</span> Experience</a></li>
-        <li><a href="#skills" class="mobile-nav-link"><span>05.</span> Skills</a></li>
-        <li><a href="#projects" class="mobile-nav-link"><span>06.</span> Projects</a></li>
-        <li><a href="#feedback" class="mobile-nav-link"><span>07.</span> Feedback</a></li>
-        <li><a href="#services" class="mobile-nav-link"><span>08.</span> Services</a></li>
-        <li><a href="#achievements" class="mobile-nav-link"><span>09.</span> Achievements</a></li>
-        <li><a href="#contact" class="mobile-nav-link"><span>10.</span> Get in Touch</a></li>
-      </ul>
-    </div>
+        </a>
 
-    <div>
-      <a href="#contact" class="btn btn-primary" style="width: 100%;">Hire Me</a>
-    </div>
-  </aside>
+        <!-- Desktop Nav Menu (All 10 Sections) -->
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#feedback" class="nav-link">Feedback</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
 
-  <!-- Main Content Landmark -->
-  <main id="main-content">
+        <!-- Nav Actions (Theme Toggle & Mobile Hamburger) -->
+        <div class="nav-actions">
+          <!-- Theme Toggle Button -->
+          <button
+            id="themeToggleBtn"
+            class="theme-toggle-btn"
+            aria-label="Toggle Dark / Light Mode"
+            title="Toggle theme"
+          >
+            <span id="themeIcon" aria-hidden="true">☀️</span>
+          </button>
 
-    <!-- ======================================================================
-         1. Home / Hero Section
-         ====================================================================== -->
-    <section id="home" class="hero" aria-label="Hero Section">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Left Column: Introduction & CTAs -->
-          <div class="hero-content">
-            <!-- Availability Status Pill -->
-            <div class="status-pill reveal-init">
-              <span class="status-dot"></span>
-              <span>Available for AI &amp; Data Science Roles</span>
-            </div>
-
-            <p class="hero-greeting reveal-init delay-1">Hello, I'm</p>
-            <h1 class="hero-name reveal-init delay-2">Aya Mohy</h1>
-
-            <!-- Animated Rotating Specialty Title -->
-            <div class="hero-title-wrapper reveal-init delay-3">
-              <span>AI Engineer &amp; Data Scientist</span>
-              <span style="color: var(--text-soft); font-weight: 400; font-size: 1.1rem; width: 100%; display: block; margin-top: 0.25rem;">
-                Specializing in <span id="rotatingSubtitle" class="rotating-subtitle-container"></span>
-              </span>
-            </div>
-
-            <!-- Short Introduction -->
-            <p class="hero-intro reveal-init delay-4">
-              "I build intelligent solutions using Machine Learning and Deep Learning to transform data into meaningful insights and real-world applications."
-            </p>
-
-            <!-- Two Prominent CTA Buttons -->
-            <div class="hero-actions reveal-init delay-5">
-              <a href="#contact" class="btn btn-primary">
-                <span>Hire Me</span>
-                <span aria-hidden="true">→</span>
-              </a>
-              <a href="#projects" class="btn btn-secondary">
-                <span>View Projects</span>
-                <span aria-hidden="true">⚡</span>
-              </a>
-            </div>
-
-            <!-- Quick Stats Bar -->
-            <div class="hero-stats-row reveal-init delay-5">
-              <div class="stat-item">
-                <span class="stat-value">0.9111</span>
-                <span class="stat-label">ROC-AUC Score</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">7-Class</span>
-                <span class="stat-label">CNN Vision Model</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-value">B.Sc.</span>
-                <span class="stat-label">Engineering Degree</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Personal Profile Photo Frame & AI Badges -->
-          <div class="hero-visual-wrapper reveal-init delay-2">
-            <div class="profile-container">
-              <!-- Radial Ambient Glow -->
-              <div class="profile-ambient-glow" aria-hidden="true"></div>
-
-              <!-- Floating AI Badges around frame -->
-              <div class="floating-badge badge-top-left animate-float">
-                <span class="badge-icon">📊</span>
-                <div>
-                  <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">ML Benchmark</div>
-                  <div style="color: var(--color-primary); font-family: var(--font-mono); font-weight: 700;">ROC-AUC: 0.9111</div>
-                </div>
-              </div>
-
-              <div class="floating-badge badge-bottom-right animate-float-reverse">
-                <span class="badge-icon">🧠</span>
-                <div>
-                  <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Deep Learning</div>
-                  <div style="color: #5EEAD4; font-family: var(--font-mono); font-weight: 700;">CNN Vision Model</div>
-                </div>
-              </div>
-
-              <!-- Profile Frame with Glowing Border -->
-              <div class="profile-frame">
-                <div class="profile-inner">
-                  <!-- Personal Profile Image with Automatic Fallback to Vector Graphic -->
-                  <img
-                    id="personalProfilePhoto"
-                    src="assets/images/profile-avatar.svg"
-                    alt="Aya Mohy — AI Engineer & Data Scientist Profile Photo"
-                    class="profile-img"
-                    loading="eager"
-                  />
-                </div>
-              </div>
-
-            </div>
-          </div>
-
+          <!-- Mobile Hamburger Toggle -->
+          <button
+            id="hamburgerBtn"
+            class="hamburger"
+            aria-label="Open mobile navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
-    </section>
-
-    <!-- ======================================================================
-         2. About Me Section
-         ====================================================================== -->
-    <section id="about" class="section" aria-label="About Me Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">About Me</span>
-          <h2 class="section-title">Bridging Engineering Rigor with <span>Applied AI</span></h2>
-          <p class="section-desc">
-            Transforming complex business problems into actionable, data-driven machine learning systems.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <!-- Left: Narrative & Capabilities -->
-          <div class="about-story reveal-init">
-            <p>
-              My path into Artificial Intelligence is grounded in a solid <strong>engineering foundation</strong> from the Faculty of Engineering (Information and Computer Engineering). Starting with professional software and frontend development, I developed a deep appreciation for robust architecture, clean code standards, and seamless user experiences.
-            </p>
-
-            <p>
-              Driven by the immense potential of data to solve systemic challenges, I transitioned into <strong>Artificial Intelligence, Machine Learning, and Deep Learning</strong>. Combining software engineering discipline with analytical modeling enables me to not only develop high-accuracy predictive models, but also package them into usable, accessible interfaces that solve real-world problems.
-            </p>
-
-            <div class="about-highlight-box">
-              <p>
-                "I focus on the entire lifecycle of intelligent systems: from meticulous exploratory data analysis and feature engineering to neural network optimization and end-to-end interface deployment."
-              </p>
-            </div>
-
-            <!-- What I Can Do Subsection -->
-            <h3 class="what-can-do-title">What I Can Do:</h3>
-            <ul class="capabilities-list">
-              <li class="capability-item">
-                <span class="capability-check">✓</span>
-                <span><strong>Build Machine Learning Classification &amp; Prediction Models:</strong> Supervised and unsupervised pipelines optimized for business outcomes.</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-check">✓</span>
-                <span><strong>Perform Data Preprocessing &amp; Exploratory Data Analysis:</strong> Data cleaning, feature engineering, and statistical anomaly detection.</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-check">✓</span>
-                <span><strong>Develop Deep Learning &amp; CNN-Based Vision Solutions:</strong> Multi-class image classification and visual pattern recognition using TensorFlow &amp; Keras.</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-check">✓</span>
-                <span><strong>Evaluate &amp; Optimize ML Models:</strong> Rigorous validation metrics, ROC-AUC calibration, confusion matrices, and hyperparameter tuning.</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-check">✓</span>
-                <span><strong>Build AI-Powered Applications:</strong> Integrating trained machine learning models into usable Streamlit and web interfaces.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Right: Visual AI Pipeline Graphic -->
-          <div class="about-visual-card reveal-init delay-2">
-            <div class="about-graphic-preview glass-card" data-tilt="true">
-              <img
-                src="assets/images/about-ai-pipeline.svg"
-                alt="End-to-End AI Engineering Workflow Diagram"
-                loading="lazy"
-              />
-            </div>
-            <div style="display: flex; gap: 0.75rem; justify-content: center;">
-              <span class="meta-chip">🧠 TensorFlow</span>
-              <span class="meta-chip">⚙️ Scikit-learn</span>
-              <span class="meta-chip">📊 Pandas</span>
-              <span class="meta-chip">🚀 Streamlit</span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         3. Education Section
-         ====================================================================== -->
-    <section id="education" class="section" aria-label="Education Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Academic Background</span>
-          <h2 class="section-title">Education &amp; <span>Engineering Foundation</span></h2>
-          <p class="section-desc">
-            Formal training in computer engineering, systems architecture, and computational mathematics.
-          </p>
-        </div>
-
-        <div class="education-container">
-          
-          <!-- Left: Education Card -->
-          <div class="glass-card education-timeline-card reveal-init" data-tilt="true">
-            <div class="education-timeline-marker">
-              🎓
-            </div>
-
-            <h3 class="education-degree">Bachelor's Degree in Engineering (B.Sc.)</h3>
-            <div class="education-faculty">Faculty of Engineering</div>
-            <div class="education-dept">Department of Information and Computer Engineering</div>
-
-            <div class="education-meta">
-              <span class="meta-chip">🏛️ Engineering Faculty</span>
-              <span class="meta-chip">⚙️ Computer Engineering</span>
-              <span class="meta-chip">📅 [Graduation Year - Editable]</span>
-            </div>
-
-            <p class="education-desc">
-              Comprehensive academic curriculum covering core computational theories, data structures, algorithms, computer architecture, probability &amp; statistics, and software engineering methodologies. This rigorous engineering background provides the analytical bedrock for tackling complex AI algorithms and data science problems.
-            </p>
-
-            <div class="education-courses">
-              <span class="course-tag">Algorithms &amp; Data Structures</span>
-              <span class="course-tag">Computer Systems</span>
-              <span class="course-tag">Probability &amp; Applied Statistics</span>
-              <span class="course-tag">Database Systems</span>
-              <span class="course-tag">Software Engineering</span>
-            </div>
-          </div>
-
-          <!-- Right: Academic Graphic Illustration -->
-          <div class="reveal-init delay-2">
-            <div class="about-graphic-preview glass-card" data-tilt="true">
-              <img
-                src="assets/images/education-academic.svg"
-                alt="Faculty of Engineering Academic Illustration"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         4. Experience Section
-         ====================================================================== -->
-    <section id="experience" class="section" aria-label="Experience Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Practical Trajectory</span>
-          <h2 class="section-title">Professional <span>Experience</span></h2>
-          <p class="section-desc">
-            Applied AI diplomas combined with a solid supporting background in real-world web application development.
-          </p>
-        </div>
-
-        <div class="experience-timeline">
-          
-          <!-- Experience Card 1: NTI AI Diploma -->
-          <div class="experience-card reveal-init">
-            <div class="exp-marker">
-              🤖
-            </div>
-            <div class="glass-card exp-content" data-tilt="true">
-              <div class="exp-header">
-                <div>
-                  <h3 class="exp-title">AI &amp; Machine Learning Training</h3>
-                  <div class="exp-org">National Telecommunication Institute (NTI)</div>
-                </div>
-                <span class="exp-period">[Diploma Duration - Editable]</span>
-              </div>
-
-              <p class="exp-summary">
-                <strong>Program: AI for Business Diploma</strong><br />
-                Intensive applied professional diploma focusing on the complete data science pipeline, predictive machine learning algorithms, deep neural architectures, and practical business intelligence solutions.
-              </p>
-
-              <ul class="exp-highlights">
-                <li class="exp-highlight-item">
-                  Implemented supervised and unsupervised machine learning algorithms using Scikit-learn, achieving high benchmark ROC-AUC scores.
-                </li>
-                <li class="exp-highlight-item">
-                  Trained Deep Learning Convolutional Neural Networks (CNN) with TensorFlow and Keras for multi-class image classification.
-                </li>
-                <li class="exp-highlight-item">
-                  Conducted exploratory data analysis, data wrangling, missing data imputation, and outlier detection with Pandas and NumPy.
-                </li>
-                <li class="exp-highlight-item">
-                  Deployed interactive machine learning dashboards with Streamlit for model interpretation and client evaluation.
-                </li>
-              </ul>
-
-              <div class="exp-skills-row">
-                <span class="tech-pill">Machine Learning</span>
-                <span class="tech-pill">Deep Learning</span>
-                <span class="tech-pill">TensorFlow</span>
-                <span class="tech-pill">Scikit-learn</span>
-                <span class="tech-pill">Pandas</span>
-                <span class="tech-pill">Streamlit</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience Card 2: Frontend Engineering -->
-          <div class="experience-card reveal-init delay-1">
-            <div class="exp-marker">
-              💻
-            </div>
-            <div class="glass-card exp-content" data-tilt="true">
-              <div class="exp-header">
-                <div>
-                  <h3 class="exp-title">Previous Professional Experience: Frontend Development</h3>
-                  <div class="exp-org">[Company Name / Organization - Editable]</div>
-                </div>
-                <span class="exp-period">[Employment Dates - Editable]</span>
-              </div>
-
-              <p class="exp-summary">
-                Supporting technical experience building responsive, interactive, and user-centric web applications. This frontend foundation allows me to seamlessly bridge the gap between backend AI models and accessible client interfaces.
-              </p>
-
-              <ul class="exp-highlights">
-                <li class="exp-highlight-item">
-                  Engineered responsive, high-performance web applications using modern JavaScript and Vue.js.
-                </li>
-                <li class="exp-highlight-item">
-                  Collaborated within software development teams following agile workflows, version control (Git &amp; GitHub), and code quality reviews.
-                </li>
-                <li class="exp-highlight-item">
-                  Translated business requirements and UI/UX wireframes into scalable, interactive frontend architectures.
-                </li>
-                <li class="exp-highlight-item">
-                  Applied analytical problem-solving and software design patterns to production-grade applications.
-                </li>
-              </ul>
-
-              <div class="exp-skills-row">
-                <span class="tech-pill">JavaScript</span>
-                <span class="tech-pill">Vue.js</span>
-                <span class="tech-pill">HTML5 &amp; CSS3</span>
-                <span class="tech-pill">Responsive Design</span>
-                <span class="tech-pill">Git &amp; GitHub</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Experience Workspace Visual Banner -->
-        <div style="margin-top: 3.5rem;" class="reveal-init delay-2">
-          <div class="about-graphic-preview glass-card" data-tilt="true">
-            <img
-              src="assets/images/experience-workspace.svg"
-              alt="Technical Evolution: Frontend to AI and Machine Learning"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         5. Skills Section
-         ====================================================================== -->
-    <section id="skills" class="section" aria-label="Skills Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Core Competencies</span>
-          <h2 class="section-title">Technical <span>Skill Set</span></h2>
-          <p class="section-desc">
-            Categorized technical capabilities honed through engineering education and hands-on AI projects.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          
-          <!-- Category 1: Programming & Data -->
-          <div class="glass-card skill-category-card reveal-init" data-tilt="true">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon">🐍</div>
-              <div>
-                <h3 class="skill-cat-title">Programming &amp; Data</h3>
-                <span class="skill-cat-subtitle">Foundational Data Processing</span>
-              </div>
-            </div>
-            <div class="skill-tags-cloud">
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Python</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Pandas</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>NumPy</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Data Cleaning</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Exploratory Data Analysis (EDA)</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Feature Engineering</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Data Wrangling</div>
-            </div>
-          </div>
-
-          <!-- Category 2: Machine Learning -->
-          <div class="glass-card skill-category-card reveal-init delay-1" data-tilt="true">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon">⚙️</div>
-              <div>
-                <h3 class="skill-cat-title">Machine Learning</h3>
-                <span class="skill-cat-subtitle">Algorithms &amp; Optimization</span>
-              </div>
-            </div>
-            <div class="skill-tags-cloud">
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Supervised Learning</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Unsupervised Learning</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Linear Regression</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Logistic Regression</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Decision Trees</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Support Vector Machines (SVM)</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Model Evaluation</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Scikit-learn</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>ROC-AUC Calibration</div>
-            </div>
-          </div>
-
-          <!-- Category 3: Deep Learning -->
-          <div class="glass-card skill-category-card reveal-init delay-2" data-tilt="true">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon">🧠</div>
-              <div>
-                <h3 class="skill-cat-title">Deep Learning</h3>
-                <span class="skill-cat-subtitle">Neural Architectures &amp; Vision</span>
-              </div>
-            </div>
-            <div class="skill-tags-cloud">
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Convolutional Neural Networks (CNN)</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Image Classification</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>TensorFlow / Keras</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Computer Vision</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Data Augmentation</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Feature Maps Extraction</div>
-            </div>
-          </div>
-
-          <!-- Category 4: Development & Tools -->
-          <div class="glass-card skill-category-card reveal-init delay-3" data-tilt="true">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon">🛠️</div>
-              <div>
-                <h3 class="skill-cat-title">Development &amp; Tools</h3>
-                <span class="skill-cat-subtitle">Ecosystem &amp; Web Interfaces</span>
-              </div>
-            </div>
-            <div class="skill-tags-cloud">
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Git &amp; GitHub</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Jupyter Notebook</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Google Colab</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Streamlit</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>HTML, CSS, JavaScript</div>
-              <div class="skill-tag"><span class="skill-tag-dot"></span>Vue.js</div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         6. Projects Section (Highest Priority Showcase)
-         ====================================================================== -->
-    <section id="projects" class="section" aria-label="Projects Showcase Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Featured Work</span>
-          <h2 class="section-title">AI &amp; Machine Learning <span>Projects</span></h2>
-          <p class="section-desc">
-            Production-grade implementations demonstrating predictive modeling, computer vision, and deployable AI interfaces.
-          </p>
-        </div>
-
-        <!-- Filter Category Tabs -->
-        <div class="project-filter-bar reveal-init">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="ml">Machine Learning</button>
-          <button class="filter-btn" data-filter="dl">Deep Learning / Computer Vision</button>
-        </div>
-
-        <div class="projects-showcase-grid">
-          
-          <!-- Project 1: Customer Churn Prediction -->
-          <article class="glass-card project-card-featured reveal-init" data-category="ml" data-tilt="true">
-            <!-- Left: Dedicated Project Thumbnail Visual -->
-            <div class="project-visual-col" data-open-project="customer-churn" title="Click to view deep technical dive">
-              <img
-                src="assets/images/project-churn.svg"
-                alt="Customer Churn Prediction ROC-AUC Machine Learning Dashboard"
-                class="project-thumb-img"
-                loading="lazy"
-              />
-              <div class="project-overlay-hint">
-                <span class="preview-badge-pill">🔍 View Technical Deep Dive</span>
-              </div>
-            </div>
-
-            <!-- Right: Details & Problem/Solution -->
-            <div class="project-info-col">
-              <div class="project-category-badge">✦ Machine Learning</div>
-              <h3 class="project-title">Customer Churn Prediction</h3>
-
-              <!-- Prominent Metric Callout -->
-              <div class="project-score-callout">
-                <span class="score-badge">ROC-AUC: 0.9111</span>
-                <span class="score-desc">High Classification Discrimination</span>
-              </div>
-
-              <!-- Problem & Solution -->
-              <div class="project-summary-box">
-                <div class="summary-heading">The Problem:</div>
-                <p class="project-desc-text">
-                  Subscription services lose valuable revenue to customer attrition. Identifying at-risk customers early empowers retention teams to intervene proactively with targeted retention plans.
-                </p>
-              </div>
-
-              <div class="project-summary-box">
-                <div class="summary-heading">The Solution:</div>
-                <p class="project-desc-text">
-                  "Developed a Machine Learning classification model to predict customer churn and identify customers who are likely to leave a service."
-                </p>
-              </div>
-
-              <!-- Tech Stack -->
-              <div class="project-tech-stack">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">Pandas</span>
-                <span class="tech-pill">NumPy</span>
-                <span class="tech-pill">Scikit-learn</span>
-                <span class="tech-pill">Machine Learning</span>
-              </div>
-
-              <!-- Action Links -->
-              <div class="project-card-actions">
-                <button class="btn btn-primary btn-sm" data-open-project="customer-churn">
-                  <span>Deep Dive</span>
-                  <span aria-hidden="true">📊</span>
-                </button>
-                <a href="https://github.com/ayamohy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                  <span>GitHub Code</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-                <a href="https://github.com/ayamohy" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                  <span>Live Demo</span>
-                  <span aria-hidden="true">⚡</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Car Damage Detection -->
-          <article class="glass-card project-card-featured reverse-layout reveal-init delay-1" data-category="dl" data-tilt="true">
-            <!-- Left: Dedicated Project Thumbnail Visual -->
-            <div class="project-visual-col" data-open-project="car-damage" title="Click to view deep technical dive">
-              <img
-                src="assets/images/project-car-damage.svg"
-                alt="Car Damage Detection Computer Vision CNN Interface"
-                class="project-thumb-img"
-                loading="lazy"
-              />
-              <div class="project-overlay-hint">
-                <span class="preview-badge-pill">🔍 View Technical Deep Dive</span>
-              </div>
-            </div>
-
-            <!-- Right: Details & Problem/Solution -->
-            <div class="project-info-col">
-              <div class="project-category-badge" style="color: #5EEAD4;">✦ Deep Learning / Computer Vision</div>
-              <h3 class="project-title">Car Damage Detection</h3>
-
-              <!-- Prominent Metric Callout -->
-              <div class="project-score-callout" style="border-color: rgba(94, 234, 212, 0.3);">
-                <span class="score-badge" style="color: #5EEAD4;">7-Class CNN Classifier</span>
-                <span class="score-desc">Multi-Class Computer Vision</span>
-              </div>
-
-              <!-- Problem & Solution -->
-              <div class="project-summary-box">
-                <div class="summary-heading">The Problem:</div>
-                <p class="project-desc-text">
-                  Vehicle damage assessment for insurance claims is traditionally slow, subjective, and prone to delays. Automated visual inspection speeds up claim estimation from days to seconds.
-                </p>
-              </div>
-
-              <div class="project-summary-box">
-                <div class="summary-heading">The Solution:</div>
-                <p class="project-desc-text">
-                  "Developed a CNN-based image classification model to detect and classify different types of vehicle damage from uploaded images."
-                </p>
-              </div>
-
-              <!-- 7 Detected Classes Breakdown -->
-              <div class="classes-breakdown">
-                <div class="classes-title">Detected Damage Classes (7):</div>
-                <div class="classes-chips-grid">
-                  <span class="class-chip">Bumper Dent</span>
-                  <span class="class-chip">Bumper Scratch</span>
-                  <span class="class-chip">Door Dent</span>
-                  <span class="class-chip">Door Scratch</span>
-                  <span class="class-chip">Glass Shatter</span>
-                  <span class="class-chip">Head Lamp</span>
-                  <span class="class-chip">Tail Lamp</span>
-                </div>
-              </div>
-
-              <!-- Tech Stack -->
-              <div class="project-tech-stack">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">TensorFlow</span>
-                <span class="tech-pill">Keras</span>
-                <span class="tech-pill">CNN</span>
-                <span class="tech-pill">Computer Vision</span>
-                <span class="tech-pill">Streamlit</span>
-              </div>
-
-              <!-- Action Links -->
-              <div class="project-card-actions">
-                <button class="btn btn-primary btn-sm" data-open-project="car-damage">
-                  <span>Deep Dive</span>
-                  <span aria-hidden="true">🧠</span>
-                </button>
-                <a href="https://github.com/ayamohy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                  <span>GitHub Code</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-                <a href="https://github.com/ayamohy" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
-                  <span>Streamlit App</span>
-                  <span aria-hidden="true">⚡</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Project Deep Dive Interactive Modal -->
-    <div id="projectModal" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-label="Project Deep Dive Modal">
-      <div class="project-modal-window">
-        <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close Project Modal">✕</button>
-        <div id="modalBody" class="modal-content-body">
-          <!-- Dynamically populated by JS from projectsData -->
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================================
-         7. Feedback Section (Testimonials)
-         ====================================================================== -->
-    <section id="feedback" class="section" aria-label="Feedback Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Testimonials</span>
-          <h2 class="section-title">Peer &amp; Colleague <span>Feedback</span></h2>
-          <p class="section-desc">
-            Perspectives from collaborators, mentors, and team members on engineering standards and technical execution.
-          </p>
-        </div>
-
-        <div class="feedback-grid">
-          
-          <!-- Testimonial 1 -->
-          <div class="glass-card testimonial-card reveal-init" data-tilt="true">
-            <div>
-              <div class="quote-icon" aria-hidden="true">“</div>
-              <p class="testimonial-text">
-                "Aya combines meticulous data discipline with strong engineering execution. Her ability to translate high-dimensional data into high-accuracy predictive models like the Churn Prediction project demonstrates outstanding analytical clarity."
-              </p>
-            </div>
-            <div class="testimonial-author-block">
-              <div class="author-avatar-placeholder">👤</div>
-              <div>
-                <div class="author-name">[Colleague / Mentor Name]</div>
-                <div class="author-role">Senior Machine Learning Lead • [Organization Placeholder]</div>
-                <div class="author-stars">★★★★★</div>
-                <span class="editable-hint">✦ Editable Placeholder</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="glass-card testimonial-card reveal-init delay-1" data-tilt="true">
-            <div>
-              <div class="quote-icon" aria-hidden="true">“</div>
-              <p class="testimonial-text">
-                "Her deep learning work on the 7-class vehicle damage detector was deeply impressive. Not only was the CNN accuracy exceptional, but she packaged the entire vision pipeline into an intuitive Streamlit interface that was immediate to evaluate."
-              </p>
-            </div>
-            <div class="testimonial-author-block">
-              <div class="author-avatar-placeholder">👤</div>
-              <div>
-                <div class="author-name">[Technical Lead Name]</div>
-                <div class="author-role">AI Program Instructor • NTI Diploma</div>
-                <div class="author-stars">★★★★★</div>
-                <span class="editable-hint">✦ Editable Placeholder</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="glass-card testimonial-card reveal-init delay-2" data-tilt="true">
-            <div>
-              <div class="quote-icon" aria-hidden="true">“</div>
-              <p class="testimonial-text">
-                "Having both a solid software engineering background and applied machine learning mastery makes Aya exceptionally versatile. She writes clean, maintainable code and approaches every problem with an engineering mindset."
-              </p>
-            </div>
-            <div class="testimonial-author-block">
-              <div class="author-avatar-placeholder">👤</div>
-              <div>
-                <div class="author-name">[Engineering Peer Name]</div>
-                <div class="author-role">Senior Software Engineer • [Company Placeholder]</div>
-                <div class="author-stars">★★★★★</div>
-                <span class="editable-hint">✦ Editable Placeholder</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         8. Services Section
-         ====================================================================== -->
-    <section id="services" class="section" aria-label="Services Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Capabilities</span>
-          <h2 class="section-title">What I Can <span>Offer</span></h2>
-          <p class="section-desc">
-            End-to-end intelligent engineering services tailored for modern data-driven challenges.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          
-          <!-- Service 1: Machine Learning Solutions -->
-          <div class="glass-card service-card reveal-init" data-tilt="true">
-            <div class="service-icon-box">⚙️</div>
-            <h3 class="service-title">1. Machine Learning Solutions</h3>
-            <p class="service-desc">
-              Custom classification, regression, and ranking models built with Scikit-learn to solve high-stakes business challenges and automate predictive decisioning.
-            </p>
-            <ul class="service-deliverables">
-              <li class="service-item">Classification &amp; prediction models</li>
-              <li class="service-item">Data-driven business problem solving</li>
-              <li class="service-item">Rigorous ROC-AUC calibration &amp; tuning</li>
-            </ul>
-          </div>
-
-          <!-- Service 2: Data Analysis -->
-          <div class="glass-card service-card reveal-init delay-1" data-tilt="true">
-            <div class="service-icon-box">📊</div>
-            <h3 class="service-title">2. Data Analysis</h3>
-            <p class="service-desc">
-              Transforming messy, incomplete raw data into structured, actionable insights using statistical data cleaning, exploratory analysis, and visual storytelling.
-            </p>
-            <ul class="service-deliverables">
-              <li class="service-item">Data cleaning and preprocessing</li>
-              <li class="service-item">Exploratory Data Analysis (EDA)</li>
-              <li class="service-item">Data visualization and insights</li>
-            </ul>
-          </div>
-
-          <!-- Service 3: Deep Learning & Computer Vision -->
-          <div class="glass-card service-card reveal-init delay-2" data-tilt="true">
-            <div class="service-icon-box">🧠</div>
-            <h3 class="service-title">3. Deep Learning &amp; Computer Vision</h3>
-            <p class="service-desc">
-              Convolutional Neural Networks (CNNs) engineered in TensorFlow &amp; Keras for high-accuracy image classification, damage detection, and visual pattern recognition.
-            </p>
-            <ul class="service-deliverables">
-              <li class="service-item">CNN-based image classification</li>
-              <li class="service-item">Image recognition applications</li>
-              <li class="service-item">Data augmentation &amp; transfer learning</li>
-            </ul>
-          </div>
-
-          <!-- Service 4: AI-Powered Applications -->
-          <div class="glass-card service-card reveal-init delay-3" data-tilt="true">
-            <div class="service-icon-box">🚀</div>
-            <h3 class="service-title">4. AI-Powered Applications</h3>
-            <p class="service-desc">
-              Bridging the gap between raw Python models and end-users by embedding trained AI algorithms into responsive Streamlit and web interfaces.
-            </p>
-            <ul class="service-deliverables">
-              <li class="service-item">Integrating trained ML models into interactive applications</li>
-              <li class="service-item">Building simple AI-powered user experiences</li>
-              <li class="service-item">Deployable Streamlit web apps</li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         9. Achievements Section
-         ====================================================================== -->
-    <section id="achievements" class="section" aria-label="Achievements Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Milestones</span>
-          <h2 class="section-title">Key Honors &amp; <span>Achievements</span></h2>
-          <p class="section-desc">
-            Recognitions, diploma milestones, and quantitative benchmark accomplishments.
-          </p>
-        </div>
-
-        <div class="achievements-layout">
-          
-          <!-- Left: Achievements Stack -->
-          <div class="achievements-cards-stack">
-            
-            <!-- Achievement 1 -->
-            <div class="achievement-item-card reveal-init">
-              <div class="achievement-icon">🎓</div>
-              <div>
-                <h3 class="achievement-title">AI for Business Diploma</h3>
-                <div class="achievement-issuer">National Telecommunication Institute (NTI)</div>
-                <p class="achievement-desc">
-                  Completed intensive training in Machine Learning, Deep Learning, Data Science, and practical AI applications with distinguished technical evaluation.
-                </p>
-              </div>
-            </div>
-
-            <!-- Achievement 2 -->
-            <div class="achievement-item-card reveal-init delay-1">
-              <div class="achievement-icon">📈</div>
-              <div>
-                <h3 class="achievement-title">Machine Learning Projects Milestone</h3>
-                <div class="achievement-issuer">Customer Churn Prediction Model</div>
-                <p class="achievement-desc">
-                  Achieved a verified ROC-AUC benchmark score of <strong>0.9111</strong> through systematic feature engineering, imbalance treatment, and hyperparameter optimization.
-                </p>
-              </div>
-            </div>
-
-            <!-- Achievement 3 -->
-            <div class="achievement-item-card reveal-init delay-2">
-              <div class="achievement-icon">🧠</div>
-              <div>
-                <h3 class="achievement-title">Deep Learning / CNN Project</h3>
-                <div class="achievement-issuer">7-Class Vehicle Damage Classifier</div>
-                <p class="achievement-desc">
-                  Engineered and trained a multi-class CNN capable of detecting 7 distinct damage classes, packaged in an operational Streamlit web application.
-                </p>
-              </div>
-            </div>
-
-            <!-- Achievement 4 (Placeholder) -->
-            <div class="achievement-item-card reveal-init delay-3">
-              <div class="achievement-icon">📜</div>
-              <div>
-                <h3 class="achievement-title">Technical Certifications</h3>
-                <div class="achievement-issuer">[Certifications Placeholder - Editable]</div>
-                <p class="achievement-desc">
-                  Continuous professional upskilling in Python, Scikit-learn, TensorFlow, and modern cloud ML workflows.
-                </p>
-              </div>
-            </div>
-
-            <!-- Achievement 5 (Placeholder) -->
-            <div class="achievement-item-card reveal-init delay-4">
-              <div class="achievement-icon">⭐</div>
-              <div>
-                <h3 class="achievement-title">Professional Milestones</h3>
-                <div class="achievement-issuer">[Milestones Placeholder - Editable]</div>
-                <p class="achievement-desc">
-                  Successfully transitioned software engineering background into applied Artificial Intelligence and Data Science solutions.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right: Visual Badge Illustration -->
-          <div class="reveal-init delay-2">
-            <div class="about-graphic-preview glass-card" data-tilt="true">
-              <img
-                src="assets/images/achievements-badge.svg"
-                alt="Excellence in AI and Engineering Laurel Badge"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         10. Get in Touch Section (Contact)
-         ====================================================================== -->
-    <section id="contact" class="section" aria-label="Contact Section">
-      <div class="container">
-        
-        <div class="section-header reveal-init">
-          <span class="section-tag">Let's Connect</span>
-          <h2 class="section-title">Let's Build Something <span>Intelligent Together</span></h2>
-          <p class="section-desc">
-            Open to full-time AI Engineer, Data Scientist, and Machine Learning opportunities, consulting, and ambitious technical collaborations.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          
-          <!-- Left: Contact Details & Visual -->
-          <div class="contact-info-block reveal-init">
-            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
-              Whether you need to develop predictive classification models, architect a computer vision pipeline, or translate raw data into strategic business value, I am excited to contribute. Let's start the conversation!
-            </p>
-
-            <div class="contact-channels">
-              
-              <!-- Email -->
-              <a href="mailto:contact@ayamohy.com" class="contact-channel-item">
-                <div class="channel-icon">✉️</div>
-                <div>
-                  <div class="channel-label">Email Address</div>
-                  <div class="channel-value">contact@ayamohy.com <span style="font-size: 0.75rem; color: var(--color-primary); font-family: var(--font-mono);">(Editable)</span></div>
-                </div>
-              </a>
-
-              <!-- LinkedIn -->
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
-                <div class="channel-icon">💼</div>
-                <div>
-                  <div class="channel-label">LinkedIn Profile</div>
-                  <div class="channel-value">linkedin.com/in/ayamohy <span style="font-size: 0.75rem; color: var(--color-primary); font-family: var(--font-mono);">(Editable)</span></div>
-                </div>
-              </a>
-
-              <!-- GitHub -->
-              <a href="https://github.com/ayamohy" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
-                <div class="channel-icon">🐙</div>
-                <div>
-                  <div class="channel-label">GitHub Repositories</div>
-                  <div class="channel-value">github.com/ayamohy <span style="font-size: 0.75rem; color: var(--color-primary); font-family: var(--font-mono);">(Editable)</span></div>
-                </div>
-              </a>
-
-            </div>
-
-            <!-- Communication Graphic Preview -->
-            <div class="about-graphic-preview glass-card" style="margin-top: 1rem;" data-tilt="true">
-              <img
-                src="assets/images/contact-communication.svg"
-                alt="Digital Neural Connection and Communication Channels"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <!-- Right: Interactive Validated Contact Form -->
-          <div class="glass-card contact-form-card reveal-init delay-1">
-            <h3 style="font-size: 1.45rem; margin-bottom: 0.5rem; color: var(--text-main);">Send a Direct Message</h3>
-            <p style="font-size: 0.92rem; color: var(--text-soft); margin-bottom: 1.75rem;">
-              Fill in the form below. Client-side validation guarantees all fields are checked before submission.
-            </p>
-
-            <form id="contactForm" novalidate>
-              
-              <!-- Full Name -->
-              <div class="form-group">
-                <label for="senderName" class="form-label">Full Name *</label>
-                <input
-                  type="text"
-                  id="senderName"
-                  name="name"
-                  class="form-control"
-                  placeholder="e.g. Dr. Alex Mercer"
-                  required
-                  autocomplete="name"
-                />
-                <span id="nameError" class="form-error-msg" aria-live="polite"></span>
-              </div>
-
-              <!-- Email Address -->
-              <div class="form-group">
-                <label for="senderEmail" class="form-label">Email Address *</label>
-                <input
-                  type="email"
-                  id="senderEmail"
-                  name="email"
-                  class="form-control"
-                  placeholder="e.g. alex.mercer@company.com"
-                  required
-                  autocomplete="email"
-                />
-                <span id="emailError" class="form-error-msg" aria-live="polite"></span>
-              </div>
-
-              <!-- Subject -->
-              <div class="form-group">
-                <label for="senderSubject" class="form-label">Subject *</label>
-                <input
-                  type="text"
-                  id="senderSubject"
-                  name="subject"
-                  class="form-control"
-                  placeholder="e.g. AI Engineering Collaboration Opportunity"
-                  required
-                />
-                <span id="subjectError" class="form-error-msg" aria-live="polite"></span>
-              </div>
-
-              <!-- Message -->
-              <div class="form-group">
-                <label for="senderMessage" class="form-label">Message *</label>
-                <textarea
-                  id="senderMessage"
-                  name="message"
-                  class="form-control"
-                  placeholder="Hello Aya, I'm reaching out regarding an AI / Machine Learning project..."
-                  rows="5"
-                  required
-                ></textarea>
-                <span id="messageError" class="form-error-msg" aria-live="polite"></span>
-              </div>
-
-              <!-- Submit Button -->
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                <span>Send Message</span>
-                <span aria-hidden="true">✉️</span>
-              </button>
-
-              <!-- Validation Feedback Toast -->
-              <div id="formToast" class="form-toast" role="alert"></div>
-
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ========================================================================
-       Footer
-       ======================================================================== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      
-      <div class="footer-top">
-        <!-- Brand Summary -->
-        <div class="footer-brand">
-          <a href="#home" class="logo">
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileBackdrop" class="mobile-backdrop" aria-hidden="true"></div>
+    <aside
+      id="mobileNav"
+      class="mobile-nav"
+      aria-label="Mobile Navigation Drawer"
+    >
+      <div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+          "
+        >
+          <span class="logo">
             <span class="logo-badge">AM</span>
             <span>Aya<span class="logo-accent">.ai</span></span>
-          </a>
-          <p>
-            AI Engineer &amp; Data Scientist crafting intelligent predictive systems, computer vision classifiers, and scalable data solutions.
-          </p>
-          <div class="footer-socials">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
-              <span>in</span>
+          </span>
+        </div>
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="#home" class="mobile-nav-link active"
+              ><span>01.</span> Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="mobile-nav-link"
+              ><span>02.</span> About Me</a
+            >
+          </li>
+          <li>
+            <a href="#education" class="mobile-nav-link"
+              ><span>03.</span> Education</a
+            >
+          </li>
+          <li>
+            <a href="#experience" class="mobile-nav-link"
+              ><span>04.</span> Experience</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="mobile-nav-link"
+              ><span>05.</span> Skills</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="mobile-nav-link"
+              ><span>06.</span> Projects</a
+            >
+          </li>
+          <li>
+            <a href="#feedback" class="mobile-nav-link"
+              ><span>07.</span> Feedback</a
+            >
+          </li>
+          <li>
+            <a href="#services" class="mobile-nav-link"
+              ><span>08.</span> Services</a
+            >
+          </li>
+          <li>
+            <a href="#achievements" class="mobile-nav-link"
+              ><span>09.</span> Achievements</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="mobile-nav-link"
+              ><span>10.</span> Get in Touch</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <a href="#contact" class="btn btn-primary" style="width: 100%"
+          >Hire Me</a
+        >
+      </div>
+    </aside>
+
+    <!-- Main Content Landmark -->
+    <main id="main-content">
+      <!-- ======================================================================
+         1. Home / Hero Section
+         ====================================================================== -->
+      <section id="home" class="hero" aria-label="Hero Section">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Left Column: Introduction & CTAs -->
+            <div class="hero-content">
+              <!-- Availability Status Pill -->
+              <div class="status-pill reveal-init">
+                <span class="status-dot"></span>
+                <span>Available for AI &amp; Data Science Roles</span>
+              </div>
+
+              <p class="hero-greeting reveal-init delay-1">Hello, I'm</p>
+              <h1 class="hero-name reveal-init delay-2">Aya Mohy</h1>
+
+              <!-- Animated Rotating Specialty Title -->
+              <div class="hero-title-wrapper reveal-init delay-3">
+                <span>AI Engineer &amp; Data Scientist</span>
+                <span
+                  style="
+                    color: var(--text-soft);
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                    width: 100%;
+                    display: block;
+                    margin-top: 0.25rem;
+                  "
+                >
+                  Specializing in
+                  <span
+                    id="rotatingSubtitle"
+                    class="rotating-subtitle-container"
+                  ></span>
+                </span>
+              </div>
+
+              <!-- Short Introduction -->
+              <p class="hero-intro reveal-init delay-4">
+                "I build intelligent solutions using Machine Learning and Deep
+                Learning to transform data into meaningful insights and
+                real-world applications."
+              </p>
+
+              <!-- Two Prominent CTA Buttons -->
+              <div class="hero-actions reveal-init delay-5">
+                <a href="#contact" class="btn btn-primary">
+                  <span>Hire Me</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                  <span>View Projects</span>
+                  <span aria-hidden="true">⚡</span>
+                </a>
+              </div>
+
+              <!-- Quick Stats Bar -->
+              <div class="hero-stats-row reveal-init delay-5">
+                <div class="stat-item">
+                  <span class="stat-value">0.9111</span>
+                  <span class="stat-label">ROC-AUC Score</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">7-Class</span>
+                  <span class="stat-label">CNN Vision Model</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-value">B.Sc.</span>
+                  <span class="stat-label">Engineering Degree</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Personal Profile Photo Frame & AI Badges -->
+            <div class="hero-visual-wrapper reveal-init delay-2">
+              <div class="profile-container">
+                <!-- Radial Ambient Glow -->
+                <div class="profile-ambient-glow" aria-hidden="true"></div>
+
+                <!-- Floating AI Badges around frame -->
+                <div class="floating-badge badge-top-left animate-float">
+                  <span class="badge-icon">📊</span>
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.72rem;
+                        color: var(--text-muted);
+                        text-transform: uppercase;
+                      "
+                    >
+                      ML Benchmark
+                    </div>
+                    <div
+                      style="
+                        color: var(--color-primary);
+                        font-family: var(--font-mono);
+                        font-weight: 700;
+                      "
+                    >
+                      ROC-AUC: 0.9111
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="floating-badge badge-bottom-right animate-float-reverse"
+                >
+                  <span class="badge-icon">🧠</span>
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.72rem;
+                        color: var(--text-muted);
+                        text-transform: uppercase;
+                      "
+                    >
+                      Deep Learning
+                    </div>
+                    <div
+                      style="
+                        color: #5eead4;
+                        font-family: var(--font-mono);
+                        font-weight: 700;
+                      "
+                    >
+                      CNN Vision Model
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Profile Frame with Glowing Border -->
+                <div class="profile-frame">
+                  <div class="profile-inner">
+                    <!-- Personal Profile Image with Automatic Fallback to Vector Graphic -->
+                    <img
+                      id="personalProfilePhoto"
+                      src="assets/images/profile-avatar.png"
+                      alt="Aya Mohy — AI Engineer & Data Scientist Profile Photo"
+                      class="profile-img"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         2. About Me Section
+         ====================================================================== -->
+      <section id="about" class="section" aria-label="About Me Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">
+              Bridging Engineering Rigor with <span>Applied AI</span>
+            </h2>
+            <p class="section-desc">
+              Transforming complex business problems into actionable,
+              data-driven machine learning systems.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <!-- Left: Narrative & Capabilities -->
+            <div class="about-story reveal-init">
+              <p>
+                My path into Artificial Intelligence is grounded in a solid
+                <strong>engineering foundation</strong> from the Faculty of
+                Engineering (Information and Computer Engineering). Starting
+                with professional software and frontend development, I developed
+                a deep appreciation for robust architecture, clean code
+                standards, and seamless user experiences.
+              </p>
+
+              <p>
+                Driven by the immense potential of data to solve systemic
+                challenges, I transitioned into
+                <strong
+                  >Artificial Intelligence, Machine Learning, and Deep
+                  Learning</strong
+                >. Combining software engineering discipline with analytical
+                modeling enables me to not only develop high-accuracy predictive
+                models, but also package them into usable, accessible interfaces
+                that solve real-world problems.
+              </p>
+
+              <div class="about-highlight-box">
+                <p>
+                  "I focus on the entire lifecycle of intelligent systems: from
+                  meticulous exploratory data analysis and feature engineering
+                  to neural network optimization and end-to-end interface
+                  deployment."
+                </p>
+              </div>
+
+              <!-- What I Can Do Subsection -->
+              <h3 class="what-can-do-title">What I Can Do:</h3>
+              <ul class="capabilities-list">
+                <li class="capability-item">
+                  <span class="capability-check">✓</span>
+                  <span
+                    ><strong
+                      >Build Machine Learning Classification &amp; Prediction
+                      Models:</strong
+                    >
+                    Supervised and unsupervised pipelines optimized for business
+                    outcomes.</span
+                  >
+                </li>
+                <li class="capability-item">
+                  <span class="capability-check">✓</span>
+                  <span
+                    ><strong
+                      >Perform Data Preprocessing &amp; Exploratory Data
+                      Analysis:</strong
+                    >
+                    Data cleaning, feature engineering, and statistical anomaly
+                    detection.</span
+                  >
+                </li>
+                <li class="capability-item">
+                  <span class="capability-check">✓</span>
+                  <span
+                    ><strong
+                      >Develop Deep Learning &amp; CNN-Based Vision
+                      Solutions:</strong
+                    >
+                    Multi-class image classification and visual pattern
+                    recognition using TensorFlow &amp; Keras.</span
+                  >
+                </li>
+                <li class="capability-item">
+                  <span class="capability-check">✓</span>
+                  <span
+                    ><strong>Evaluate &amp; Optimize ML Models:</strong>
+                    Rigorous validation metrics, ROC-AUC calibration, confusion
+                    matrices, and hyperparameter tuning.</span
+                  >
+                </li>
+                <li class="capability-item">
+                  <span class="capability-check">✓</span>
+                  <span
+                    ><strong>Build AI-Powered Applications:</strong> Integrating
+                    trained machine learning models into usable Streamlit and
+                    web interfaces.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: Visual AI Pipeline Graphic -->
+            <div class="about-visual-card reveal-init delay-2">
+              <div class="about-graphic-preview glass-card" data-tilt="true">
+                <img
+                  src="assets/images/about-ai-pipeline.png"
+                  alt="End-to-End AI Engineering Workflow Diagram"
+                  loading="lazy"
+                />
+              </div>
+              <div style="display: flex; gap: 0.75rem; justify-content: center">
+                <span class="meta-chip">🧠 TensorFlow</span>
+                <span class="meta-chip">⚙️ Scikit-learn</span>
+                <span class="meta-chip">📊 Pandas</span>
+                <span class="meta-chip">🚀 Streamlit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         3. Education Section
+         ====================================================================== -->
+      <section id="education" class="section" aria-label="Education Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Academic Background</span>
+            <h2 class="section-title">
+              Education &amp; <span>Engineering Foundation</span>
+            </h2>
+            <p class="section-desc">
+              Formal training in computer engineering, systems architecture, and
+              computational mathematics.
+            </p>
+          </div>
+
+          <div class="education-container">
+            <!-- Left: Education Card -->
+            <div
+              class="glass-card education-timeline-card reveal-init"
+              data-tilt="true"
+            >
+              <div class="education-timeline-marker">🎓</div>
+
+              <h3 class="education-degree">
+                Bachelor's Degree in Engineering (B.Sc.)
+              </h3>
+              <div class="education-faculty">Faculty of Engineering</div>
+              <div class="education-dept">
+                Department of Information and Computer Engineering
+              </div>
+
+              <div class="education-meta">
+                <span class="meta-chip">🏛️ Engineering Faculty</span>
+                <span class="meta-chip">⚙️ Computer Engineering</span>
+                <!-- <span class="meta-chip">📅 [Graduation Year - Editable]</span> -->
+              </div>
+
+              <p class="education-desc">
+                Comprehensive academic curriculum covering core computational
+                theories, data structures, algorithms, computer architecture,
+                probability &amp; statistics, and software engineering
+                methodologies. This rigorous engineering background provides the
+                analytical bedrock for tackling complex AI algorithms and data
+                science problems.
+              </p>
+
+              <div class="education-courses">
+                <span class="course-tag">Algorithms &amp; Data Structures</span>
+                <span class="course-tag">Computer Systems</span>
+                <span class="course-tag"
+                  >Probability &amp; Applied Statistics</span
+                >
+                <span class="course-tag">Database Systems</span>
+                <span class="course-tag">Software Engineering</span>
+              </div>
+            </div>
+
+            <!-- Right: Academic Graphic Illustration -->
+            <div class="reveal-init delay-2">
+              <div class="about-graphic-preview glass-card" data-tilt="true">
+                <img
+                  src="assets/images/education-academic.svg"
+                  alt="Faculty of Engineering Academic Illustration"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         4. Experience Section
+         ====================================================================== -->
+      <section id="experience" class="section" aria-label="Experience Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Practical Trajectory</span>
+            <h2 class="section-title">Professional <span>Experience</span></h2>
+            <p class="section-desc">
+              Applied AI diplomas combined with a solid supporting background in
+              real-world web application development.
+            </p>
+          </div>
+
+          <div class="experience-timeline">
+            <!-- Experience Card 1: NTI AI Diploma -->
+            <div class="experience-card reveal-init">
+              <div class="exp-marker">🤖</div>
+              <div class="glass-card exp-content" data-tilt="true">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-title">AI For Business</h3>
+                    <div class="exp-org">
+                      National Telecommunication Institute (NTI)
+                    </div>
+                  </div>
+                  <span class="exp-period">[Diploma Duration - Editable]</span>
+                </div>
+
+                <p class="exp-summary">
+                  <strong>Program: AI for Business Diploma</strong><br />
+                  Intensive applied professional diploma focusing on the
+                  complete data science pipeline, predictive machine learning
+                  algorithms, deep neural architectures, and practical business
+                  intelligence solutions.
+                </p>
+
+                <ul class="exp-highlights">
+                  <li class="exp-highlight-item">
+                    Implemented supervised and unsupervised machine learning
+                    algorithms using Scikit-learn, achieving high benchmark
+                    ROC-AUC scores.
+                  </li>
+                  <li class="exp-highlight-item">
+                    Trained Deep Learning Convolutional Neural Networks (CNN)
+                    with TensorFlow and Keras for multi-class image
+                    classification.
+                  </li>
+                  <li class="exp-highlight-item">
+                    Conducted exploratory data analysis, data wrangling, missing
+                    data imputation, and outlier detection with Pandas and
+                    NumPy.
+                  </li>
+                  <li class="exp-highlight-item">
+                    Deployed interactive machine learning dashboards with
+                    Streamlit for model interpretation and client evaluation.
+                  </li>
+                </ul>
+
+                <div class="exp-skills-row">
+                  <span class="tech-pill">Machine Learning</span>
+                  <span class="tech-pill">Deep Learning</span>
+                  <span class="tech-pill">TensorFlow</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">Pandas</span>
+                  <span class="tech-pill">Streamlit</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Card 2: Frontend Engineering -->
+            <div class="experience-card reveal-init delay-1">
+              <div class="exp-marker">💻</div>
+              <div class="glass-card exp-content" data-tilt="true">
+                <div class="exp-header">
+                  <div>
+                    <h3 class="exp-title">
+                      Previous Professional Experience: Frontend Development
+                    </h3>
+                    <div class="exp-org">
+                      [Company Name / Organization - Editable]
+                    </div>
+                  </div>
+                  <span class="exp-period">[Employment Dates - Editable]</span>
+                </div>
+
+                <p class="exp-summary">
+                  Supporting technical experience building responsive,
+                  interactive, and user-centric web applications. This frontend
+                  foundation allows me to seamlessly bridge the gap between
+                  backend AI models and accessible client interfaces.
+                </p>
+
+                <ul class="exp-highlights">
+                  <li class="exp-highlight-item">
+                    Engineered responsive, high-performance web applications
+                    using modern JavaScript and Vue.js.
+                  </li>
+                  <li class="exp-highlight-item">
+                    Collaborated within software development teams following
+                    agile workflows, version control (Git &amp; GitHub), and
+                    code quality reviews.
+                  </li>
+                  <li class="exp-highlight-item">
+                    Translated business requirements and UI/UX wireframes into
+                    scalable, interactive frontend architectures.
+                  </li>
+                  <li class="exp-highlight-item">
+                    Applied analytical problem-solving and software design
+                    patterns to production-grade applications.
+                  </li>
+                </ul>
+
+                <div class="exp-skills-row">
+                  <span class="tech-pill">JavaScript</span>
+                  <span class="tech-pill">Vue.js</span>
+                  <span class="tech-pill">HTML5 &amp; CSS3</span>
+                  <span class="tech-pill">Responsive Design</span>
+                  <span class="tech-pill">Git &amp; GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Workspace Visual Banner -->
+          <div style="margin-top: 3.5rem" class="reveal-init delay-2">
+            <div class="about-graphic-preview glass-card" data-tilt="true">
+              <img
+                src="assets/images/experience-workspace.svg"
+                alt="Technical Evolution: Frontend to AI and Machine Learning"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         5. Skills Section
+         ====================================================================== -->
+      <section id="skills" class="section" aria-label="Skills Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Core Competencies</span>
+            <h2 class="section-title">Technical <span>Skill Set</span></h2>
+            <p class="section-desc">
+              Categorized technical capabilities honed through engineering
+              education and hands-on AI projects.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Category 1: Programming & Data -->
+            <div
+              class="glass-card skill-category-card reveal-init"
+              data-tilt="true"
+            >
+              <div class="skill-category-header">
+                <div class="skill-cat-icon">🐍</div>
+                <div>
+                  <h3 class="skill-cat-title">Programming &amp; Data</h3>
+                  <span class="skill-cat-subtitle"
+                    >Foundational Data Processing</span
+                  >
+                </div>
+              </div>
+              <div class="skill-tags-cloud">
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Python
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Pandas
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>NumPy
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Data Cleaning
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Exploratory Data Analysis
+                  (EDA)
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Feature Engineering
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Data Wrangling
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Machine Learning -->
+            <div
+              class="glass-card skill-category-card reveal-init delay-1"
+              data-tilt="true"
+            >
+              <div class="skill-category-header">
+                <div class="skill-cat-icon">⚙️</div>
+                <div>
+                  <h3 class="skill-cat-title">Machine Learning</h3>
+                  <span class="skill-cat-subtitle"
+                    >Algorithms &amp; Optimization</span
+                  >
+                </div>
+              </div>
+              <div class="skill-tags-cloud">
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Supervised Learning
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Unsupervised Learning
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Linear Regression
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Logistic Regression
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Decision Trees
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Support Vector Machines
+                  (SVM)
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Model Evaluation
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Scikit-learn
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>ROC-AUC Calibration
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: Deep Learning -->
+            <div
+              class="glass-card skill-category-card reveal-init delay-2"
+              data-tilt="true"
+            >
+              <div class="skill-category-header">
+                <div class="skill-cat-icon">🧠</div>
+                <div>
+                  <h3 class="skill-cat-title">Deep Learning</h3>
+                  <span class="skill-cat-subtitle"
+                    >Neural Architectures &amp; Vision</span
+                  >
+                </div>
+              </div>
+              <div class="skill-tags-cloud">
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Convolutional Neural
+                  Networks (CNN)
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Image Classification
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>TensorFlow / Keras
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Computer Vision
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Data Augmentation
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Feature Maps Extraction
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 4: Development & Tools -->
+            <div
+              class="glass-card skill-category-card reveal-init delay-3"
+              data-tilt="true"
+            >
+              <div class="skill-category-header">
+                <div class="skill-cat-icon">🛠️</div>
+                <div>
+                  <h3 class="skill-cat-title">Development &amp; Tools</h3>
+                  <span class="skill-cat-subtitle"
+                    >Ecosystem &amp; Web Interfaces</span
+                  >
+                </div>
+              </div>
+              <div class="skill-tags-cloud">
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Git &amp; GitHub
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Jupyter Notebook
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Google Colab
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Streamlit
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>HTML, CSS, JavaScript
+                </div>
+                <div class="skill-tag">
+                  <span class="skill-tag-dot"></span>Vue.js
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         6. Projects Section (Highest Priority Showcase)
+         ====================================================================== -->
+      <section
+        id="projects"
+        class="section"
+        aria-label="Projects Showcase Section"
+      >
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Featured Work</span>
+            <h2 class="section-title">
+              AI &amp; Machine Learning <span>Projects</span>
+            </h2>
+            <p class="section-desc">
+              Production-grade implementations demonstrating predictive
+              modeling, computer vision, and deployable AI interfaces.
+            </p>
+          </div>
+
+          <!-- Filter Category Tabs -->
+          <div class="project-filter-bar reveal-init">
+            <button class="filter-btn active" data-filter="all">
+              All Projects
+            </button>
+            <button class="filter-btn" data-filter="ml">
+              Machine Learning
+            </button>
+            <button class="filter-btn" data-filter="dl">
+              Deep Learning / Computer Vision
+            </button>
+          </div>
+
+          <div class="projects-showcase-grid">
+            <!-- Project 1: Customer Churn Prediction -->
+            <article
+              class="glass-card project-card-featured reveal-init"
+              data-category="ml"
+              data-tilt="true"
+            >
+              <!-- Left: Dedicated Project Thumbnail Visual -->
+              <div
+                class="project-visual-col"
+                data-open-project="customer-churn"
+                title="Click to view deep technical dive"
+              >
+                <img
+                  src="assets/images/project-churn.svg"
+                  alt="Customer Churn Prediction ROC-AUC Machine Learning Dashboard"
+                  class="project-thumb-img"
+                  loading="lazy"
+                />
+                <div class="project-overlay-hint">
+                  <span class="preview-badge-pill"
+                    >🔍 View Technical Deep Dive</span
+                  >
+                </div>
+              </div>
+
+              <!-- Right: Details & Problem/Solution -->
+              <div class="project-info-col">
+                <div class="project-category-badge">✦ Machine Learning</div>
+                <h3 class="project-title">Customer Churn Prediction</h3>
+
+                <!-- Prominent Metric Callout -->
+                <div class="project-score-callout">
+                  <span class="score-badge">ROC-AUC: 0.9111</span>
+                  <span class="score-desc"
+                    >High Classification Discrimination</span
+                  >
+                </div>
+
+                <!-- Problem & Solution -->
+                <div class="project-summary-box">
+                  <div class="summary-heading">The Problem:</div>
+                  <p class="project-desc-text">
+                    Subscription services lose valuable revenue to customer
+                    attrition. Identifying at-risk customers early empowers
+                    retention teams to intervene proactively with targeted
+                    retention plans.
+                  </p>
+                </div>
+
+                <div class="project-summary-box">
+                  <div class="summary-heading">The Solution:</div>
+                  <p class="project-desc-text">
+                    "Developed a Machine Learning classification model to
+                    predict customer churn and identify customers who are likely
+                    to leave a service."
+                  </p>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Pandas</span>
+                  <span class="tech-pill">NumPy</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">Machine Learning</span>
+                </div>
+
+                <!-- Action Links -->
+                <div class="project-card-actions">
+                  <button
+                    class="btn btn-primary btn-sm"
+                    data-open-project="customer-churn"
+                  >
+                    <span>Deep Dive</span>
+                    <span aria-hidden="true">📊</span>
+                  </button>
+                  <a
+                    href="https://github.com/ayamohy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm"
+                  >
+                    <span>GitHub Code</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/ayamohy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline btn-sm"
+                  >
+                    <span>Live Demo</span>
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Car Damage Detection -->
+            <article
+              class="glass-card project-card-featured reverse-layout reveal-init delay-1"
+              data-category="dl"
+              data-tilt="true"
+            >
+              <!-- Left: Dedicated Project Thumbnail Visual -->
+              <div
+                class="project-visual-col"
+                data-open-project="car-damage"
+                title="Click to view deep technical dive"
+              >
+                <img
+                  src="assets/images/project-car-damage.svg"
+                  alt="Car Damage Detection Computer Vision CNN Interface"
+                  class="project-thumb-img"
+                  loading="lazy"
+                />
+                <div class="project-overlay-hint">
+                  <span class="preview-badge-pill"
+                    >🔍 View Technical Deep Dive</span
+                  >
+                </div>
+              </div>
+
+              <!-- Right: Details & Problem/Solution -->
+              <div class="project-info-col">
+                <div class="project-category-badge" style="color: #5eead4">
+                  ✦ Deep Learning / Computer Vision
+                </div>
+                <h3 class="project-title">Car Damage Detection</h3>
+
+                <!-- Prominent Metric Callout -->
+                <div
+                  class="project-score-callout"
+                  style="border-color: rgba(94, 234, 212, 0.3)"
+                >
+                  <span class="score-badge" style="color: #5eead4"
+                    >7-Class CNN Classifier</span
+                  >
+                  <span class="score-desc">Multi-Class Computer Vision</span>
+                </div>
+
+                <!-- Problem & Solution -->
+                <div class="project-summary-box">
+                  <div class="summary-heading">The Problem:</div>
+                  <p class="project-desc-text">
+                    Vehicle damage assessment for insurance claims is
+                    traditionally slow, subjective, and prone to delays.
+                    Automated visual inspection speeds up claim estimation from
+                    days to seconds.
+                  </p>
+                </div>
+
+                <div class="project-summary-box">
+                  <div class="summary-heading">The Solution:</div>
+                  <p class="project-desc-text">
+                    "Developed a CNN-based image classification model to detect
+                    and classify different types of vehicle damage from uploaded
+                    images."
+                  </p>
+                </div>
+
+                <!-- 7 Detected Classes Breakdown -->
+                <div class="classes-breakdown">
+                  <div class="classes-title">Detected Damage Classes (7):</div>
+                  <div class="classes-chips-grid">
+                    <span class="class-chip">Bumper Dent</span>
+                    <span class="class-chip">Bumper Scratch</span>
+                    <span class="class-chip">Door Dent</span>
+                    <span class="class-chip">Door Scratch</span>
+                    <span class="class-chip">Glass Shatter</span>
+                    <span class="class-chip">Head Lamp</span>
+                    <span class="class-chip">Tail Lamp</span>
+                  </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">TensorFlow</span>
+                  <span class="tech-pill">Keras</span>
+                  <span class="tech-pill">CNN</span>
+                  <span class="tech-pill">Computer Vision</span>
+                  <span class="tech-pill">Streamlit</span>
+                </div>
+
+                <!-- Action Links -->
+                <div class="project-card-actions">
+                  <button
+                    class="btn btn-primary btn-sm"
+                    data-open-project="car-damage"
+                  >
+                    <span>Deep Dive</span>
+                    <span aria-hidden="true">🧠</span>
+                  </button>
+                  <a
+                    href="https://github.com/ayamohy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm"
+                  >
+                    <span>GitHub Code</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/ayamohy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline btn-sm"
+                  >
+                    <span>Streamlit App</span>
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Deep Dive Interactive Modal -->
+      <div
+        id="projectModal"
+        class="project-modal-backdrop"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Project Deep Dive Modal"
+      >
+        <div class="project-modal-window">
+          <button
+            id="modalCloseBtn"
+            class="modal-close-btn"
+            aria-label="Close Project Modal"
+          >
+            ✕
+          </button>
+          <div id="modalBody" class="modal-content-body">
+            <!-- Dynamically populated by JS from projectsData -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+         7. Feedback Section (Testimonials)
+         ====================================================================== -->
+      <section id="feedback" class="section" aria-label="Feedback Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">
+              Peer &amp; Colleague <span>Feedback</span>
+            </h2>
+            <p class="section-desc">
+              Perspectives from collaborators, mentors, and team members on
+              engineering standards and technical execution.
+            </p>
+          </div>
+
+          <div class="feedback-grid">
+            <!-- Testimonial 1 -->
+            <div
+              class="glass-card testimonial-card reveal-init"
+              data-tilt="true"
+            >
+              <div>
+                <div class="quote-icon" aria-hidden="true">“</div>
+                <p class="testimonial-text">
+                  "Aya combines meticulous data discipline with strong
+                  engineering execution. Her ability to translate
+                  high-dimensional data into high-accuracy predictive models
+                  like the Churn Prediction project demonstrates outstanding
+                  analytical clarity."
+                </p>
+              </div>
+              <div class="testimonial-author-block">
+                <div class="author-avatar-placeholder">👤</div>
+                <div>
+                  <div class="author-name">[Colleague / Mentor Name]</div>
+                  <div class="author-role">
+                    Senior Machine Learning Lead • [Organization Placeholder]
+                  </div>
+                  <div class="author-stars">★★★★★</div>
+                  <span class="editable-hint">✦ Editable Placeholder</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div
+              class="glass-card testimonial-card reveal-init delay-1"
+              data-tilt="true"
+            >
+              <div>
+                <div class="quote-icon" aria-hidden="true">“</div>
+                <p class="testimonial-text">
+                  "Her deep learning work on the 7-class vehicle damage detector
+                  was deeply impressive. Not only was the CNN accuracy
+                  exceptional, but she packaged the entire vision pipeline into
+                  an intuitive Streamlit interface that was immediate to
+                  evaluate."
+                </p>
+              </div>
+              <div class="testimonial-author-block">
+                <div class="author-avatar-placeholder">👤</div>
+                <div>
+                  <div class="author-name">[Technical Lead Name]</div>
+                  <div class="author-role">
+                    AI Program Instructor • NTI Diploma
+                  </div>
+                  <div class="author-stars">★★★★★</div>
+                  <span class="editable-hint">✦ Editable Placeholder</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div
+              class="glass-card testimonial-card reveal-init delay-2"
+              data-tilt="true"
+            >
+              <div>
+                <div class="quote-icon" aria-hidden="true">“</div>
+                <p class="testimonial-text">
+                  "Having both a solid software engineering background and
+                  applied machine learning mastery makes Aya exceptionally
+                  versatile. She writes clean, maintainable code and approaches
+                  every problem with an engineering mindset."
+                </p>
+              </div>
+              <div class="testimonial-author-block">
+                <div class="author-avatar-placeholder">👤</div>
+                <div>
+                  <div class="author-name">[Engineering Peer Name]</div>
+                  <div class="author-role">
+                    Senior Software Engineer • [Company Placeholder]
+                  </div>
+                  <div class="author-stars">★★★★★</div>
+                  <span class="editable-hint">✦ Editable Placeholder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         8. Services Section
+         ====================================================================== -->
+      <section id="services" class="section" aria-label="Services Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Capabilities</span>
+            <h2 class="section-title">What I Can <span>Offer</span></h2>
+            <p class="section-desc">
+              End-to-end intelligent engineering services tailored for modern
+              data-driven challenges.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <!-- Service 1: Machine Learning Solutions -->
+            <div class="glass-card service-card reveal-init" data-tilt="true">
+              <div class="service-icon-box">⚙️</div>
+              <h3 class="service-title">1. Machine Learning Solutions</h3>
+              <p class="service-desc">
+                Custom classification, regression, and ranking models built with
+                Scikit-learn to solve high-stakes business challenges and
+                automate predictive decisioning.
+              </p>
+              <ul class="service-deliverables">
+                <li class="service-item">
+                  Classification &amp; prediction models
+                </li>
+                <li class="service-item">
+                  Data-driven business problem solving
+                </li>
+                <li class="service-item">
+                  Rigorous ROC-AUC calibration &amp; tuning
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service 2: Data Analysis -->
+            <div
+              class="glass-card service-card reveal-init delay-1"
+              data-tilt="true"
+            >
+              <div class="service-icon-box">📊</div>
+              <h3 class="service-title">2. Data Analysis</h3>
+              <p class="service-desc">
+                Transforming messy, incomplete raw data into structured,
+                actionable insights using statistical data cleaning, exploratory
+                analysis, and visual storytelling.
+              </p>
+              <ul class="service-deliverables">
+                <li class="service-item">Data cleaning and preprocessing</li>
+                <li class="service-item">Exploratory Data Analysis (EDA)</li>
+                <li class="service-item">Data visualization and insights</li>
+              </ul>
+            </div>
+
+            <!-- Service 3: Deep Learning & Computer Vision -->
+            <div
+              class="glass-card service-card reveal-init delay-2"
+              data-tilt="true"
+            >
+              <div class="service-icon-box">🧠</div>
+              <h3 class="service-title">
+                3. Deep Learning &amp; Computer Vision
+              </h3>
+              <p class="service-desc">
+                Convolutional Neural Networks (CNNs) engineered in TensorFlow
+                &amp; Keras for high-accuracy image classification, damage
+                detection, and visual pattern recognition.
+              </p>
+              <ul class="service-deliverables">
+                <li class="service-item">CNN-based image classification</li>
+                <li class="service-item">Image recognition applications</li>
+                <li class="service-item">
+                  Data augmentation &amp; transfer learning
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service 4: AI-Powered Applications -->
+            <div
+              class="glass-card service-card reveal-init delay-3"
+              data-tilt="true"
+            >
+              <div class="service-icon-box">🚀</div>
+              <h3 class="service-title">4. AI-Powered Applications</h3>
+              <p class="service-desc">
+                Bridging the gap between raw Python models and end-users by
+                embedding trained AI algorithms into responsive Streamlit and
+                web interfaces.
+              </p>
+              <ul class="service-deliverables">
+                <li class="service-item">
+                  Integrating trained ML models into interactive applications
+                </li>
+                <li class="service-item">
+                  Building simple AI-powered user experiences
+                </li>
+                <li class="service-item">Deployable Streamlit web apps</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         9. Achievements Section
+         ====================================================================== -->
+      <section
+        id="achievements"
+        class="section"
+        aria-label="Achievements Section"
+      >
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Milestones</span>
+            <h2 class="section-title">
+              Key Honors &amp; <span>Achievements</span>
+            </h2>
+            <p class="section-desc">
+              Recognitions, diploma milestones, and quantitative benchmark
+              accomplishments.
+            </p>
+          </div>
+
+          <div class="achievements-layout">
+            <!-- Left: Achievements Stack -->
+            <div class="achievements-cards-stack">
+              <!-- Achievement 1 -->
+              <div class="achievement-item-card reveal-init">
+                <div class="achievement-icon">🎓</div>
+                <div>
+                  <h3 class="achievement-title">AI for Business Diploma</h3>
+                  <div class="achievement-issuer">
+                    National Telecommunication Institute (NTI)
+                  </div>
+                  <p class="achievement-desc">
+                    Completed intensive training in Machine Learning, Deep
+                    Learning, Data Science, and practical AI applications with
+                    distinguished technical evaluation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Achievement 2 -->
+              <div class="achievement-item-card reveal-init delay-1">
+                <div class="achievement-icon">📈</div>
+                <div>
+                  <h3 class="achievement-title">
+                    Machine Learning Projects Milestone
+                  </h3>
+                  <div class="achievement-issuer">
+                    Customer Churn Prediction Model
+                  </div>
+                  <p class="achievement-desc">
+                    Achieved a verified ROC-AUC benchmark score of
+                    <strong>0.9111</strong> through systematic feature
+                    engineering, imbalance treatment, and hyperparameter
+                    optimization.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Achievement 3 -->
+              <div class="achievement-item-card reveal-init delay-2">
+                <div class="achievement-icon">🧠</div>
+                <div>
+                  <h3 class="achievement-title">Deep Learning / CNN Project</h3>
+                  <div class="achievement-issuer">
+                    7-Class Vehicle Damage Classifier
+                  </div>
+                  <p class="achievement-desc">
+                    Engineered and trained a multi-class CNN capable of
+                    detecting 7 distinct damage classes, packaged in an
+                    operational Streamlit web application.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Achievement 4 (Placeholder) -->
+              <div class="achievement-item-card reveal-init delay-3">
+                <div class="achievement-icon">📜</div>
+                <div>
+                  <h3 class="achievement-title">Technical Certifications</h3>
+                  <div class="achievement-issuer">
+                    [Certifications Placeholder - Editable]
+                  </div>
+                  <p class="achievement-desc">
+                    Continuous professional upskilling in Python, Scikit-learn,
+                    TensorFlow, and modern cloud ML workflows.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Achievement 5 (Placeholder) -->
+              <div class="achievement-item-card reveal-init delay-4">
+                <div class="achievement-icon">⭐</div>
+                <div>
+                  <h3 class="achievement-title">Professional Milestones</h3>
+                  <div class="achievement-issuer">
+                    [Milestones Placeholder - Editable]
+                  </div>
+                  <p class="achievement-desc">
+                    Successfully transitioned software engineering background
+                    into applied Artificial Intelligence and Data Science
+                    solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Visual Badge Illustration -->
+            <div class="reveal-init delay-2">
+              <div class="about-graphic-preview glass-card" data-tilt="true">
+                <img
+                  src="assets/images/achievements-badge.svg"
+                  alt="Excellence in AI and Engineering Laurel Badge"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+         10. Get in Touch Section (Contact)
+         ====================================================================== -->
+      <section id="contact" class="section" aria-label="Contact Section">
+        <div class="container">
+          <div class="section-header reveal-init">
+            <span class="section-tag">Let's Connect</span>
+            <h2 class="section-title">
+              Let's Build Something <span>Intelligent Together</span>
+            </h2>
+            <p class="section-desc">
+              Open to full-time AI Engineer, Data Scientist, and Machine
+              Learning opportunities, consulting, and ambitious technical
+              collaborations.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Left: Contact Details & Visual -->
+            <div class="contact-info-block reveal-init">
+              <p
+                style="
+                  font-size: 1.05rem;
+                  line-height: 1.7;
+                  color: var(--text-muted);
+                "
+              >
+                Whether you need to develop predictive classification models,
+                architect a computer vision pipeline, or translate raw data into
+                strategic business value, I am excited to contribute. Let's
+                start the conversation!
+              </p>
+
+              <div class="contact-channels">
+                <!-- Email -->
+                <a
+                  href="mailto:contact@ayamohy.com"
+                  class="contact-channel-item"
+                >
+                  <div class="channel-icon">✉️</div>
+                  <div>
+                    <div class="channel-label">Email Address</div>
+                    <div class="channel-value">
+                      contact@ayamohy.com
+                      <span
+                        style="
+                          font-size: 0.75rem;
+                          color: var(--color-primary);
+                          font-family: var(--font-mono);
+                        "
+                        >(Editable)</span
+                      >
+                    </div>
+                  </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-channel-item"
+                >
+                  <div class="channel-icon">💼</div>
+                  <div>
+                    <div class="channel-label">LinkedIn Profile</div>
+                    <div class="channel-value">
+                      linkedin.com/in/ayamohy
+                      <span
+                        style="
+                          font-size: 0.75rem;
+                          color: var(--color-primary);
+                          font-family: var(--font-mono);
+                        "
+                        >(Editable)</span
+                      >
+                    </div>
+                  </div>
+                </a>
+
+                <!-- GitHub -->
+                <a
+                  href="https://github.com/ayamohy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-channel-item"
+                >
+                  <div class="channel-icon">🐙</div>
+                  <div>
+                    <div class="channel-label">GitHub Repositories</div>
+                    <div class="channel-value">
+                      github.com/ayamohy
+                      <span
+                        style="
+                          font-size: 0.75rem;
+                          color: var(--color-primary);
+                          font-family: var(--font-mono);
+                        "
+                        >(Editable)</span
+                      >
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Communication Graphic Preview -->
+              <div
+                class="about-graphic-preview glass-card"
+                style="margin-top: 1rem"
+                data-tilt="true"
+              >
+                <img
+                  src="assets/images/contact-communication.svg"
+                  alt="Digital Neural Connection and Communication Channels"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <!-- Right: Interactive Validated Contact Form -->
+            <div class="glass-card contact-form-card reveal-init delay-1">
+              <h3
+                style="
+                  font-size: 1.45rem;
+                  margin-bottom: 0.5rem;
+                  color: var(--text-main);
+                "
+              >
+                Send a Direct Message
+              </h3>
+              <p
+                style="
+                  font-size: 0.92rem;
+                  color: var(--text-soft);
+                  margin-bottom: 1.75rem;
+                "
+              >
+                Fill in the form below. Client-side validation guarantees all
+                fields are checked before submission.
+              </p>
+
+              <form id="contactForm" novalidate>
+                <!-- Full Name -->
+                <div class="form-group">
+                  <label for="senderName" class="form-label">Full Name *</label>
+                  <input
+                    type="text"
+                    id="senderName"
+                    name="name"
+                    class="form-control"
+                    placeholder="e.g. Dr. Alex Mercer"
+                    required
+                    autocomplete="name"
+                  />
+                  <span
+                    id="nameError"
+                    class="form-error-msg"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                  <label for="senderEmail" class="form-label"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    id="senderEmail"
+                    name="email"
+                    class="form-control"
+                    placeholder="e.g. alex.mercer@company.com"
+                    required
+                    autocomplete="email"
+                  />
+                  <span
+                    id="emailError"
+                    class="form-error-msg"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                  <label for="senderSubject" class="form-label"
+                    >Subject *</label
+                  >
+                  <input
+                    type="text"
+                    id="senderSubject"
+                    name="subject"
+                    class="form-control"
+                    placeholder="e.g. AI Engineering Collaboration Opportunity"
+                    required
+                  />
+                  <span
+                    id="subjectError"
+                    class="form-error-msg"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <label for="senderMessage" class="form-label"
+                    >Message *</label
+                  >
+                  <textarea
+                    id="senderMessage"
+                    name="message"
+                    class="form-control"
+                    placeholder="Hello Aya, I'm reaching out regarding an AI / Machine Learning project..."
+                    rows="5"
+                    required
+                  ></textarea>
+                  <span
+                    id="messageError"
+                    class="form-error-msg"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="width: 100%"
+                >
+                  <span>Send Message</span>
+                  <span aria-hidden="true">✉️</span>
+                </button>
+
+                <!-- Validation Feedback Toast -->
+                <div id="formToast" class="form-toast" role="alert"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Brand Summary -->
+          <div class="footer-brand">
+            <a href="#home" class="logo">
+              <span class="logo-badge">AM</span>
+              <span>Aya<span class="logo-accent">.ai</span></span>
             </a>
-            <a href="https://github.com/ayamohy" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
-              <span>git</span>
-            </a>
-            <a href="mailto:contact@ayamohy.com" class="social-icon-btn" aria-label="Direct Email">
-              <span>@</span>
-            </a>
+            <p>
+              AI Engineer &amp; Data Scientist crafting intelligent predictive
+              systems, computer vision classifiers, and scalable data solutions.
+            </p>
+            <div class="footer-socials">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn"
+                aria-label="LinkedIn Profile"
+              >
+                <span>in</span>
+              </a>
+              <a
+                href="https://github.com/ayamohy"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon-btn"
+                aria-label="GitHub Profile"
+              >
+                <span>git</span>
+              </a>
+              <a
+                href="mailto:contact@ayamohy.com"
+                class="social-icon-btn"
+                aria-label="Direct Email"
+              >
+                <span>@</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#skills">Skills</a></li>
+            </ul>
+          </div>
+
+          <!-- AI Projects -->
+          <div>
+            <h4 class="footer-col-title">Showcase</h4>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#projects"
+                  >Customer Churn Prediction (0.9111 ROC-AUC)</a
+                >
+              </li>
+              <li>
+                <a href="#projects">Car Damage Detection (7-Class CNN)</a>
+              </li>
+              <li><a href="#services">Machine Learning Solutions</a></li>
+              <li><a href="#achievements">NTI AI for Business Diploma</a></li>
+              <li><a href="#contact">Get in Touch</a></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="footer-col-title">Navigation</h4>
-          <ul class="footer-links-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-          </ul>
-        </div>
-
-        <!-- AI Projects -->
-        <div>
-          <h4 class="footer-col-title">Showcase</h4>
-          <ul class="footer-links-list">
-            <li><a href="#projects">Customer Churn Prediction (0.9111 ROC-AUC)</a></li>
-            <li><a href="#projects">Car Damage Detection (7-Class CNN)</a></li>
-            <li><a href="#services">Machine Learning Solutions</a></li>
-            <li><a href="#achievements">NTI AI for Business Diploma</a></li>
-            <li><a href="#contact">Get in Touch</a></li>
-          </ul>
+        <div class="footer-bottom">
+          <div>&copy; 2026 <strong>Aya Mohy</strong>. All rights reserved.</div>
+          <div
+            style="
+              font-family: var(--font-mono);
+              font-size: 0.8rem;
+              color: var(--color-primary);
+            "
+          >
+            AI Engineer | Data Scientist | Machine Learning
+          </div>
         </div>
       </div>
+    </footer>
 
-      <div class="footer-bottom">
-        <div>
-          &copy; 2026 <strong>Aya Mohy</strong>. All rights reserved.
-        </div>
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-primary);">
-          AI Engineer | Data Scientist | Machine Learning
-        </div>
-      </div>
+    <!-- Floating Back-to-Top Button with Scroll Progress -->
+    <button
+      id="backToTopBtn"
+      class="back-to-top"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <svg
+        class="progress-circle"
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+        aria-hidden="true"
+      >
+        <circle class="progress-circle-bg" cx="25" cy="25" r="23" />
+        <circle
+          id="progressCircleBar"
+          class="progress-circle-bar"
+          cx="25"
+          cy="25"
+          r="23"
+        />
+      </svg>
+      <span style="font-size: 1.15rem; transform: translateY(-1px)">↑</span>
+    </button>
 
-    </div>
-  </footer>
-
-  <!-- Floating Back-to-Top Button with Scroll Progress -->
-  <button id="backToTopBtn" class="back-to-top" aria-label="Back to top" title="Back to top">
-    <svg class="progress-circle" width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
-      <circle class="progress-circle-bg" cx="25" cy="25" r="23" />
-      <circle id="progressCircleBar" class="progress-circle-bar" cx="25" cy="25" r="23" />
-    </svg>
-    <span style="font-size: 1.15rem; transform: translateY(-1px);">↑</span>
-  </button>
-
-  <!-- JavaScript Modules -->
-  <script src="js/projects-data.js"></script>
-  <script src="js/particles.js"></script>
-  <script src="js/script.js"></script>
-</body>
+    <!-- JavaScript Modules -->
+    <script src="js/projects-data.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
-
